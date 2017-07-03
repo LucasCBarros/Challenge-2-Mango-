@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A29BFB661F04338C00013898 /* View2.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29BFB651F04338C00013898 /* View2.xib */; };
+		A2D4E6A01F08489D00E82F18 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2D4E69F1F08489D00E82F18 /* Images.xcassets */; };
 		AC94AD611B8E40BF002D9AD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94AD601B8E40BF002D9AD2 /* AppDelegate.swift */; };
 		AC94AD631B8E40BF002D9AD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94AD621B8E40BF002D9AD2 /* ViewController.swift */; };
 		AC94AD661B8E40BF002D9AD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC94AD641B8E40BF002D9AD2 /* Main.storyboard */; };
-		AC94AD681B8E40BF002D9AD2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC94AD671B8E40BF002D9AD2 /* Images.xcassets */; };
 		AC94AD6B1B8E40BF002D9AD2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC94AD691B8E40BF002D9AD2 /* LaunchScreen.xib */; };
 		AC94AD771B8E40BF002D9AD2 /* SnapchatCameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94AD761B8E40BF002D9AD2 /* SnapchatCameraTests.swift */; };
 		AC94AD821B8E4174002D9AD2 /* View1.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94AD801B8E4174002D9AD2 /* View1.swift */; };
@@ -33,12 +33,12 @@
 
 /* Begin PBXFileReference section */
 		A29BFB651F04338C00013898 /* View2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View2.xib; sourceTree = "<group>"; };
+		A2D4E69F1F08489D00E82F18 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AC94AD5B1B8E40BF002D9AD2 /* SnapchatCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapchatCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC94AD5F1B8E40BF002D9AD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC94AD601B8E40BF002D9AD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC94AD621B8E40BF002D9AD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AC94AD651B8E40BF002D9AD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AC94AD671B8E40BF002D9AD2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AC94AD6A1B8E40BF002D9AD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AC94AD701B8E40BF002D9AD2 /* SnapchatCameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapchatCameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC94AD751B8E40BF002D9AD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,7 +98,6 @@
 				A29BFB651F04338C00013898 /* View2.xib */,
 				AC94AD8A1B8E436D002D9AD2 /* View3.swift */,
 				AC94AD8B1B8E436D002D9AD2 /* View3.xib */,
-				AC94AD671B8E40BF002D9AD2 /* Images.xcassets */,
 				AC94AD691B8E40BF002D9AD2 /* LaunchScreen.xib */,
 				AC94AD5E1B8E40BF002D9AD2 /* Supporting Files */,
 			);
@@ -108,6 +107,7 @@
 		AC94AD5E1B8E40BF002D9AD2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A2D4E69F1F08489D00E82F18 /* Images.xcassets */,
 				AC94AD5F1B8E40BF002D9AD2 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -216,8 +216,8 @@
 				AC94AD661B8E40BF002D9AD2 /* Main.storyboard in Resources */,
 				AC94AD6B1B8E40BF002D9AD2 /* LaunchScreen.xib in Resources */,
 				AC94AD8D1B8E436D002D9AD2 /* View3.xib in Resources */,
+				A2D4E6A01F08489D00E82F18 /* Images.xcassets in Resources */,
 				AC94AD831B8E4174002D9AD2 /* View1.xib in Resources */,
-				AC94AD681B8E40BF002D9AD2 /* Images.xcassets in Resources */,
 				A29BFB661F04338C00013898 /* View2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

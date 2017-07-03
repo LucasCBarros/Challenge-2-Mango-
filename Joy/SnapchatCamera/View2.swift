@@ -67,10 +67,15 @@ class View2: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
     }
     
     
+    @IBOutlet var flashButton: UIButton!
     @IBAction func activateFlash(_ sender: UIButton) {
         if captureDevice!.hasTorch{
             do {try captureDevice!.lockForConfiguration()
+                var flashIcon = UIImage()
                 captureDevice!.torchMode = captureDevice!.isTorchActive ? AVCaptureTorchMode.off : AVCaptureTorchMode.on
+                if captureDevice!.isTorchActive{ flashIcon = #imageLiteral(resourceName: "flashOffIcon") as UIImage}
+                else { flashIcon = #imageLiteral(resourceName: "flashOnIcon") as UIImage}
+                flashButton.setBackgroundImage(flashIcon, for: UIControlState.normal)
                 captureDevice!.unlockForConfiguration()
             } catch { print ("error while trying to activate flash") }
         }
@@ -88,6 +93,7 @@ class View2: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
     }
     
     
+    @IBOutlet var captureButton: UIButton!
     @IBAction func startCapture(_ sender: UIButton) {
         captureAnotherPicture()
     }
@@ -105,10 +111,15 @@ class View2: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
     }
     
     func captureAnotherPicture(){
+        var icon = UIImage()
         if didtakePhoto == true {
+            icon = #imageLiteral(resourceName: "captureIcon") as UIImage
+            captureButton.setBackgroundImage(icon, for: UIControlState.normal)
             self.pickedImage.isHidden = true
             didtakePhoto = false}
         else {
+            icon = #imageLiteral(resourceName: "capturingIcon") as UIImage
+            captureButton.setBackgroundImage(icon, for: UIControlState.normal)
             captureSession.startRunning()
             didtakePhoto = true
             capturePicture()}

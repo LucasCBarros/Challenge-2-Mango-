@@ -12,6 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="View2" customModule="SnapchatCamera" customModuleProvider="target">
             <connections>
                 <outlet property="cameraView" destination="URI-qD-Ilo" id="iXw-Fb-Shf"/>
+                <outlet property="captureButton" destination="0Xy-HK-ycH" id="fx8-2o-0yK"/>
+                <outlet property="flashButton" destination="mpo-lo-U0W" id="EnS-ge-Gae"/>
                 <outlet property="pickedImage" destination="w9r-CH-zCy" id="F0S-Aj-arI"/>
                 <outlet property="view" destination="0B4-bl-wur" id="nNg-c3-R9U"/>
             </connections>
@@ -25,8 +27,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w9r-CH-zCy">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w9r-CH-zCy">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAQ-MZ-6h8">
                     <rect key="frame" x="16" y="623" width="48" height="30"/>
@@ -42,53 +45,50 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpo-lo-U0W">
-                    <rect key="frame" x="99" y="586" width="34" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpo-lo-U0W" userLabel="flashButton">
+                    <rect key="frame" x="78" y="541" width="48" height="48"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="flash">
+                    <state key="normal" backgroundImage="flashOffIcon">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="activateFlash:" destination="-1" eventType="touchUpInside" id="W8R-g1-7Bn"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rY6-gg-UwV">
-                    <rect key="frame" x="240" y="586" width="36" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rY6-gg-UwV" userLabel="setCamera">
+                    <rect key="frame" x="250" y="551" width="40" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="swap">
+                    <state key="normal" backgroundImage="cameraIcon">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="setCamera:" destination="-1" eventType="touchUpInside" id="cEY-an-65n"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXr-ja-idH">
-                    <rect key="frame" x="161" y="586" width="53" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xy-HK-ycH" userLabel="capture">
+                    <rect key="frame" x="152" y="530" width="70" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="capture">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
+                    <state key="normal" backgroundImage="captureIcon"/>
                     <connections>
-                        <action selector="startCapture:" destination="-1" eventType="touchUpInside" id="a1V-B8-HxV"/>
+                        <action selector="startCapture:" destination="-1" eventType="touchUpInside" id="Gz5-0m-8WR"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="URI-qD-Ilo" firstAttribute="top" secondItem="0B4-bl-wur" secondAttribute="top" id="3cP-pI-eLS"/>
-                <constraint firstAttribute="trailing" secondItem="w9r-CH-zCy" secondAttribute="trailing" id="AZe-Ky-h1U"/>
-                <constraint firstItem="w9r-CH-zCy" firstAttribute="top" secondItem="0B4-bl-wur" secondAttribute="top" id="D3G-qg-kXe"/>
-                <constraint firstItem="w9r-CH-zCy" firstAttribute="centerY" secondItem="0B4-bl-wur" secondAttribute="centerY" id="E7h-ap-vhz"/>
-                <constraint firstItem="URI-qD-Ilo" firstAttribute="centerX" secondItem="0B4-bl-wur" secondAttribute="centerX" id="Jya-Vt-Bx0"/>
-                <constraint firstAttribute="bottom" secondItem="URI-qD-Ilo" secondAttribute="bottom" id="MU1-Xb-KxR"/>
-                <constraint firstItem="URI-qD-Ilo" firstAttribute="leading" secondItem="0B4-bl-wur" secondAttribute="leading" id="SWC-Ud-bJO"/>
-                <constraint firstAttribute="bottom" secondItem="w9r-CH-zCy" secondAttribute="bottom" id="TFo-y6-XPi"/>
-                <constraint firstItem="w9r-CH-zCy" firstAttribute="leading" secondItem="0B4-bl-wur" secondAttribute="leading" id="jvb-PT-bql"/>
-                <constraint firstItem="w9r-CH-zCy" firstAttribute="centerX" secondItem="0B4-bl-wur" secondAttribute="centerX" id="m10-k7-MDB"/>
-                <constraint firstAttribute="trailing" secondItem="URI-qD-Ilo" secondAttribute="trailing" id="t60-Wp-wC9"/>
-                <constraint firstItem="URI-qD-Ilo" firstAttribute="centerY" secondItem="0B4-bl-wur" secondAttribute="centerY" id="x6p-dv-ynJ"/>
+                <constraint firstItem="URI-qD-Ilo" firstAttribute="leading" secondItem="0B4-bl-wur" secondAttribute="leading" id="0re-PX-WxM"/>
+                <constraint firstItem="URI-qD-Ilo" firstAttribute="centerX" secondItem="0B4-bl-wur" secondAttribute="centerX" id="2We-e6-5Ca"/>
+                <constraint firstItem="URI-qD-Ilo" firstAttribute="top" secondItem="0B4-bl-wur" secondAttribute="top" id="Ac7-2V-YFf"/>
+                <constraint firstAttribute="trailing" secondItem="URI-qD-Ilo" secondAttribute="trailing" id="b2P-8a-8Uz"/>
+                <constraint firstItem="URI-qD-Ilo" firstAttribute="centerY" secondItem="0B4-bl-wur" secondAttribute="centerY" id="fzk-Ed-Or7"/>
+                <constraint firstAttribute="bottom" secondItem="URI-qD-Ilo" secondAttribute="bottom" id="jzG-kE-VZr"/>
             </constraints>
             <point key="canvasLocation" x="1856.5" y="-3557.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="cameraIcon" width="512" height="368"/>
+        <image name="captureIcon" width="240" height="240"/>
+        <image name="flashOffIcon" width="264" height="280"/>
+    </resources>
 </document>
