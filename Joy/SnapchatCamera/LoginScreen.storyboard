@@ -10,23 +10,19 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="Gei-pv-F9b">
+        <scene sceneID="EcH-Mn-TXs">
             <objects>
-                <viewController storyboardIdentifier="VotingViewID" id="Aet-tM-vIr" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginScreenID" id="3mG-wU-F3X" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hCt-UN-0e5"/>
-                        <viewControllerLayoutGuide type="bottom" id="wZL-kQ-hnp"/>
+                        <viewControllerLayoutGuide type="top" id="12J-xd-oNK"/>
+                        <viewControllerLayoutGuide type="bottom" id="OSA-PE-MYL"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xbj-1S-kqz">
+                    <view key="view" contentMode="scaleToFill" id="tcN-vD-Dme">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avi-Hb-Pdf">
-                                <rect key="frame" x="62" y="64" width="251" height="512"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="FUNFOU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SA2-0T-9Bh">
-                                <rect key="frame" x="166" y="184" width="94" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="login!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-dY-A2a">
+                                <rect key="frame" x="101" y="152" width="107" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -36,9 +32,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rf3-JH-AAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Bv-K4-fWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-47.200000000000003" y="78.710644677661179"/>
+            <point key="canvasLocation" x="194.40000000000001" y="-295.50224887556226"/>
         </scene>
     </scenes>
 </document>

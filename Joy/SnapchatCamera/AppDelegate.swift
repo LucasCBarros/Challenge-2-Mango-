@@ -16,6 +16,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        var firstViewController: UIViewController
+        
+        if self.isfirstLaunch()
+        {
+            let loginStoryBoard = UIStoryboard(name: "LoginScreen", bundle: nil)
+            firstViewController = loginStoryBoard.instantiateViewController(withIdentifier: "LoginScreenID")
+        }
+        else
+        {
+            let homeStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+            firstViewController = homeStoryBoard.instantiateViewController(withIdentifier: "HomeScreenID")
+        }
+        
+        self.window?.rootViewController = firstViewController
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
@@ -39,6 +56,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func isfirstLaunch() -> Bool
+    {
+        var firstTime: Bool
+        
+        // Returns the shared defaults object.
+        let defaults = UserDefaults.standard
+        
+        if defaults.string(forKey: "notFirstLaunch") != nil
+        {
+            firstTime = false
+        }
+        else
+        {
+            defaults.set(true, forKey: "notFirstLaunch")
+            firstTime = true
+        }
+        return firstTime
     }
 
 
