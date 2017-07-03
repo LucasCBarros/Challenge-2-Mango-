@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C5523FA1F057F3A00EB312C /* VotingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C5523F91F057F3A00EB312C /* VotingView.storyboard */; };
 		A29BFB661F04338C00013898 /* View2.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29BFB651F04338C00013898 /* View2.xib */; };
 		AC94AD611B8E40BF002D9AD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94AD601B8E40BF002D9AD2 /* AppDelegate.swift */; };
 		AC94AD631B8E40BF002D9AD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94AD621B8E40BF002D9AD2 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C5523F91F057F3A00EB312C /* VotingView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VotingView.storyboard; sourceTree = "<group>"; };
 		A29BFB651F04338C00013898 /* View2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View2.xib; sourceTree = "<group>"; };
 		AC94AD5B1B8E40BF002D9AD2 /* SnapchatCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapchatCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC94AD5F1B8E40BF002D9AD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,6 +70,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C5523FB1F057F4D00EB312C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9C5523F91F057F3A00EB312C /* VotingView.storyboard */,
+				AC94AD8A1B8E436D002D9AD2 /* View3.swift */,
+				AC94AD621B8E40BF002D9AD2 /* ViewController.swift */,
+				AC94AD801B8E4174002D9AD2 /* View1.swift */,
+				AC94AD811B8E4174002D9AD2 /* View1.xib */,
+				AC94AD841B8E41A1002D9AD2 /* View2.swift */,
+				A29BFB651F04338C00013898 /* View2.xib */,
+				AC94AD8B1B8E436D002D9AD2 /* View3.xib */,
+				AC94AD641B8E40BF002D9AD2 /* Main.storyboard */,
+				AC94AD691B8E40BF002D9AD2 /* LaunchScreen.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		AC94AD521B8E40BF002D9AD2 = {
 			isa = PBXGroup;
 			children = (
@@ -90,16 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				AC94AD601B8E40BF002D9AD2 /* AppDelegate.swift */,
-				AC94AD621B8E40BF002D9AD2 /* ViewController.swift */,
-				AC94AD641B8E40BF002D9AD2 /* Main.storyboard */,
-				AC94AD801B8E4174002D9AD2 /* View1.swift */,
-				AC94AD811B8E4174002D9AD2 /* View1.xib */,
-				AC94AD841B8E41A1002D9AD2 /* View2.swift */,
-				A29BFB651F04338C00013898 /* View2.xib */,
-				AC94AD8A1B8E436D002D9AD2 /* View3.swift */,
-				AC94AD8B1B8E436D002D9AD2 /* View3.xib */,
+				9C5523FB1F057F4D00EB312C /* View */,
 				AC94AD671B8E40BF002D9AD2 /* Images.xcassets */,
-				AC94AD691B8E40BF002D9AD2 /* LaunchScreen.xib */,
 				AC94AD5E1B8E40BF002D9AD2 /* Supporting Files */,
 			);
 			path = SnapchatCamera;
@@ -217,6 +228,7 @@
 				AC94AD6B1B8E40BF002D9AD2 /* LaunchScreen.xib in Resources */,
 				AC94AD8D1B8E436D002D9AD2 /* View3.xib in Resources */,
 				AC94AD831B8E4174002D9AD2 /* View1.xib in Resources */,
+				9C5523FA1F057F3A00EB312C /* VotingView.storyboard in Resources */,
 				AC94AD681B8E40BF002D9AD2 /* Images.xcassets in Resources */,
 				A29BFB661F04338C00013898 /* View2.xib in Resources */,
 			);
