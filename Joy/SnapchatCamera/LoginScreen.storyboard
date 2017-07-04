@@ -6,13 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login Screen View Controller-->
         <scene sceneID="EcH-Mn-TXs">
             <objects>
-                <viewController storyboardIdentifier="LoginScreenID" id="3mG-wU-F3X" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginScreenID" id="3mG-wU-F3X" customClass="LoginScreenViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="12J-xd-oNK"/>
                         <viewControllerLayoutGuide type="bottom" id="OSA-PE-MYL"/>
@@ -21,16 +22,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="login!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-dY-A2a">
-                                <rect key="frame" x="101" y="152" width="107" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUq-dY-A2a">
+                                <rect key="frame" x="128" y="237" width="119" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="PYF-bi-a0v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HsF-Qr-hpd">
+                                <rect key="frame" x="94" y="318" width="234" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="234" id="D1M-uo-fuc"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndm-8E-5zz">
+                                <rect key="frame" x="26" y="323" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDe-Jz-eyb">
+                                <rect key="frame" x="132.5" y="80" width="110" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="aKp-b4-CKb"/>
+                                    <constraint firstAttribute="width" constant="110" id="nPh-Tf-MPF"/>
+                                </constraints>
+                                <state key="normal" title="Registrar"/>
+                                <connections>
+                                    <action selector="registerButton:" destination="3mG-wU-F3X" eventType="touchUpInside" id="VfM-Cg-4V1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="HsF-Qr-hpd" secondAttribute="trailing" constant="31" id="1Mm-ig-otd"/>
+                            <constraint firstItem="MUq-dY-A2a" firstAttribute="top" secondItem="12J-xd-oNK" secondAttribute="bottom" constant="217" id="J3H-Yn-QS4"/>
+                            <constraint firstItem="HsF-Qr-hpd" firstAttribute="centerY" secondItem="ndm-8E-5zz" secondAttribute="centerY" id="TgE-9q-gk0"/>
+                            <constraint firstItem="YDe-Jz-eyb" firstAttribute="centerX" secondItem="tcN-vD-Dme" secondAttribute="centerX" id="Vlj-xi-vxV"/>
+                            <constraint firstItem="MUq-dY-A2a" firstAttribute="centerX" secondItem="tcN-vD-Dme" secondAttribute="centerX" id="hWa-da-AUz"/>
+                            <constraint firstItem="HsF-Qr-hpd" firstAttribute="leading" secondItem="ndm-8E-5zz" secondAttribute="trailing" constant="26" id="nIl-3e-Hj2"/>
+                            <constraint firstItem="HsF-Qr-hpd" firstAttribute="top" secondItem="MUq-dY-A2a" secondAttribute="bottom" constant="27" id="p6N-ZO-gtT"/>
+                            <constraint firstItem="YDe-Jz-eyb" firstAttribute="top" secondItem="12J-xd-oNK" secondAttribute="bottom" constant="60" id="rUd-ca-vyn"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="userTextField" destination="HsF-Qr-hpd" id="gIe-cM-Gib"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Bv-K4-fWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

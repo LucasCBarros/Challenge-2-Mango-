@@ -11,6 +11,7 @@ import UIKit
 class View3: UIViewController {
 
 
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
