@@ -41,7 +41,9 @@ class View2: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
         if captureSession.canAddOutput(stillImageOutput) {captureSession.addOutput((stillImageOutput))}
     }
     
+    @IBOutlet var cameraButton: UIButton!
     func frontCamera(_ front: Bool){
+        var icon = UIImage()
         let devices = AVCaptureDevice.devices()
         
         do {try captureSession.removeInput(AVCaptureDeviceInput(device: captureDevice))} catch { print ("error while looking for devices")}
@@ -50,13 +52,16 @@ class View2: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
             if ((device as AnyObject).hasMediaType(AVMediaTypeVideo)){
                 if front {
                     if (device as AnyObject).position == AVCaptureDevicePosition.front {
+                        icon = #imageLiteral(resourceName: "CameraTraseiraIcon") as UIImage
+                        cameraButton.setBackgroundImage(icon, for: UIControlState.normal)
                         captureDevice = device as? AVCaptureDevice
                         do {try captureSession.addInput(AVCaptureDeviceInput(device:captureDevice))} catch { print ("error while setting camera position")}
                         break }}
                 else {
                     if (device as AnyObject).position == AVCaptureDevicePosition.back {
+                        icon = #imageLiteral(resourceName: "CameraFrontalIcon") as UIImage
+                        cameraButton.setBackgroundImage(icon, for: UIControlState.normal)
                         captureDevice = device as? AVCaptureDevice
-                            
                         do {try captureSession.addInput(AVCaptureDeviceInput(device:captureDevice))} catch { print ("error while setting camera position")}
                         break }}}}
     }

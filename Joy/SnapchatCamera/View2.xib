@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="View2" customModule="SnapchatCamera" customModuleProvider="target">
             <connections>
+                <outlet property="cameraButton" destination="rY6-gg-UwV" id="hp7-Be-PLm"/>
                 <outlet property="cameraView" destination="URI-qD-Ilo" id="iXw-Fb-Shf"/>
                 <outlet property="captureButton" destination="0Xy-HK-ycH" id="fx8-2o-0yK"/>
                 <outlet property="flashButton" destination="mpo-lo-U0W" id="EnS-ge-Gae"/>
@@ -31,17 +32,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAQ-MZ-6h8">
-                    <rect key="frame" x="16" y="623" width="48" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAQ-MZ-6h8" userLabel="BattleButton">
+                    <rect key="frame" x="16" y="607" width="50" height="50"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Battles">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtU-89-tXh">
-                    <rect key="frame" x="314" y="617" width="44" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Profile">
+                    <state key="normal" backgroundImage="battlesIcon">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -55,22 +49,29 @@
                         <action selector="activateFlash:" destination="-1" eventType="touchUpInside" id="W8R-g1-7Bn"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rY6-gg-UwV" userLabel="setCamera">
-                    <rect key="frame" x="250" y="551" width="40" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" backgroundImage="cameraIcon">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="setCamera:" destination="-1" eventType="touchUpInside" id="cEY-an-65n"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Xy-HK-ycH" userLabel="capture">
-                    <rect key="frame" x="152" y="530" width="70" height="70"/>
+                    <rect key="frame" x="152" y="511" width="70" height="70"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" backgroundImage="captureIcon"/>
                     <connections>
                         <action selector="startCapture:" destination="-1" eventType="touchUpInside" id="Gz5-0m-8WR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtU-89-tXh" userLabel="ProfileButton">
+                    <rect key="frame" x="313" y="601" width="56" height="56"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="profileIcon">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rY6-gg-UwV" userLabel="setCamera">
+                    <rect key="frame" x="246" y="536" width="55" height="58"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" backgroundImage="CameraTraseiraIcon">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="setCamera:" destination="-1" eventType="touchUpInside" id="cEY-an-65n"/>
                     </connections>
                 </button>
             </subviews>
@@ -87,8 +88,10 @@
         </view>
     </objects>
     <resources>
-        <image name="cameraIcon" width="512" height="368"/>
+        <image name="CameraTraseiraIcon" width="320" height="320"/>
+        <image name="battlesIcon" width="320" height="320"/>
         <image name="captureIcon" width="240" height="240"/>
         <image name="flashOffIcon" width="264" height="280"/>
+        <image name="profileIcon" width="320" height="320"/>
     </resources>
 </document>
