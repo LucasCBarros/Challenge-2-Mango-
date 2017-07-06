@@ -7,28 +7,64 @@
 //
 
 import UIKit
-import FirebaseDatabase
+import FirebaseAuth
 
-class LoginScreenViewController: UIViewController
+class LoginScreenViewController: UIViewController, UITextFieldDelegate
 {
-    var ref: DatabaseReference?
     
-    @IBOutlet weak var userTextField: UITextField!
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        self.ref = Database.database().reference()
+        //set delegate to textfile
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
         
+        self.emailTextField.clearsOnBeginEditing = true
+        self.passwordTextField.clearsOnBeginEditing = true
     }
     
-    @IBAction func registerButton(_ sender: Any)
+    @IBAction func logInButton(_ sender: Any)
     {
-        if let text = self.userTextField.text
-        {
-            self.ref?.child("users").childByAutoId().setValue(text)
-            
+        let email = self.emailTextField.text!
+        let password = self.passwordTextField.text!
+        // Fazer funcao que valida valores e retorna string
+        
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if let usr = user
+            {
+                print("logou")
+                self.loginHandler()
+            }
         }
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        self.view.endEditing(true)
+        print("return")
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.emailTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
+    }
+    
+    func loginHandler()
+    {
+        let defautls = UserDefaults.standard
+        
+        defautls.set("logged", forKey: "login")
+        print("salvou o login")
+        
+        self.performSegue(withIdentifier: "Main", sender: self)
+    }
+    
 }

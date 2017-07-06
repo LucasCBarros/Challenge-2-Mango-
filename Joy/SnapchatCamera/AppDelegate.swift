@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var firstViewController: UIViewController
         
-        if self.isfirstLaunch()
+        if !self.isLoggedIn()
         {
             let loginStoryBoard = UIStoryboard(name: "LoginScreen", bundle: nil)
             firstViewController = loginStoryBoard.instantiateViewController(withIdentifier: "LoginScreenID")
@@ -61,23 +61,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func isfirstLaunch() -> Bool
+    func isLoggedIn() -> Bool
     {
-        var firstTime: Bool
+        var logged = false
         
         // Returns the shared defaults object.
         let defaults = UserDefaults.standard
-        
-        if defaults.string(forKey: "notFirstLaunch") != nil
+
+        // Checks whether the default exists
+        if let status = defaults.string(forKey: "login")
         {
-            firstTime = false
+            // Make sure that it is logged in
+            if status == "logged"
+            {
+                logged = true
+            }
         }
+            
         else
         {
-            defaults.set(true, forKey: "notFirstLaunch")
-            firstTime = true
+            defaults.set("login", forKey: "not logged")
         }
-        return firstTime
+        
+        return logged
     }
 
 

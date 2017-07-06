@@ -12,6 +12,7 @@
 		9C4C41971F0ACB190087A69C /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C4C41961F0ACB190087A69C /* LoginScreen.storyboard */; };
 		9C5218F21F0C249A00D2D201 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C5218F11F0C249A00D2D201 /* GoogleService-Info.plist */; };
 		9C5523FA1F057F3A00EB312C /* VotingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C5523F91F057F3A00EB312C /* VotingView.storyboard */; };
+		9CB80DCC1F0DFB43003AC919 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB80DCB1F0DFB43003AC919 /* RegisterViewController.swift */; };
 		9CB8FF641F0C2B2500DB98C6 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB8FF631F0C2B2500DB98C6 /* LoginScreenViewController.swift */; };
 		A29BFB661F04338C00013898 /* View2.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29BFB651F04338C00013898 /* View2.xib */; };
 		A2D4E6A01F08489D00E82F18 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2D4E69F1F08489D00E82F18 /* Images.xcassets */; };
@@ -43,6 +44,7 @@
 		9C4C41961F0ACB190087A69C /* LoginScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 		9C5218F11F0C249A00D2D201 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9C5523F91F057F3A00EB312C /* VotingView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = VotingView.storyboard; sourceTree = "<group>"; };
+		9CB80DCB1F0DFB43003AC919 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		9CB8FF631F0C2B2500DB98C6 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		A29BFB651F04338C00013898 /* View2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View2.xib; sourceTree = "<group>"; };
 		A2D4E69F1F08489D00E82F18 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -100,8 +102,8 @@
 		9C5523FB1F057F4D00EB312C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9CB80DCA1F0DFB1A003AC919 /* Login */,
 				9C5523F91F057F3A00EB312C /* VotingView.storyboard */,
-				9C4C41961F0ACB190087A69C /* LoginScreen.storyboard */,
 				AC94AD8A1B8E436D002D9AD2 /* View3.swift */,
 				AC94AD621B8E40BF002D9AD2 /* ViewController.swift */,
 				AC94AD801B8E4174002D9AD2 /* View1.swift */,
@@ -111,9 +113,18 @@
 				AC94AD8B1B8E436D002D9AD2 /* View3.xib */,
 				AC94AD641B8E40BF002D9AD2 /* Main.storyboard */,
 				AC94AD691B8E40BF002D9AD2 /* LaunchScreen.xib */,
-				9CB8FF631F0C2B2500DB98C6 /* LoginScreenViewController.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		9CB80DCA1F0DFB1A003AC919 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9C4C41961F0ACB190087A69C /* LoginScreen.storyboard */,
+				9CB8FF631F0C2B2500DB98C6 /* LoginScreenViewController.swift */,
+				9CB80DCB1F0DFB43003AC919 /* RegisterViewController.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		AC94AD521B8E40BF002D9AD2 = {
@@ -237,7 +248,7 @@
 				TargetAttributes = {
 					AC94AD5A1B8E40BF002D9AD2 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = KYTAYKS6H2;
+						DevelopmentTeam = J5KQYDNX5E;
 						LastSwiftMigration = 0830;
 					};
 					AC94AD6F1B8E40BF002D9AD2 = {
@@ -392,6 +403,7 @@
 			files = (
 				AC94AD631B8E40BF002D9AD2 /* ViewController.swift in Sources */,
 				AC94AD8C1B8E436D002D9AD2 /* View3.swift in Sources */,
+				9CB80DCC1F0DFB43003AC919 /* RegisterViewController.swift in Sources */,
 				9CB8FF641F0C2B2500DB98C6 /* LoginScreenViewController.swift in Sources */,
 				AC94AD821B8E4174002D9AD2 /* View1.swift in Sources */,
 				AC94AD611B8E40BF002D9AD2 /* AppDelegate.swift in Sources */,
@@ -531,7 +543,7 @@
 			baseConfigurationReference = E999D9EA3C71D2FABB11C6A4 /* Pods-SnapchatCamera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KYTAYKS6H2;
+				DEVELOPMENT_TEAM = J5KQYDNX5E;
 				INFOPLIST_FILE = SnapchatCamera/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -546,7 +558,7 @@
 			baseConfigurationReference = 4E3AC7818B4C18573DD65E8A /* Pods-SnapchatCamera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KYTAYKS6H2;
+				DEVELOPMENT_TEAM = J5KQYDNX5E;
 				INFOPLIST_FILE = SnapchatCamera/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
