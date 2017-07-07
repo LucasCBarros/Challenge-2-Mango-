@@ -20,21 +20,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
-        var firstViewController: UIViewController
-        
-        if !self.isLoggedIn()
-        {
-            let loginStoryBoard = UIStoryboard(name: "LoginScreen", bundle: nil)
-            firstViewController = loginStoryBoard.instantiateViewController(withIdentifier: "LoginScreenID")
-        }
-        else
-        {
-            let homeStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-            firstViewController = homeStoryBoard.instantiateViewController(withIdentifier: "HomeScreenID")
-        }
-        
-        self.window?.rootViewController = firstViewController
-        self.window?.makeKeyAndVisible()
+//        var firstViewController: UIViewController
+//        
+//        if !self.isLoggedIn()
+//        {
+//            let loginStoryBoard = UIStoryboard(name: "LoginScreen", bundle: nil)
+//            firstViewController = loginStoryBoard.instantiateViewController(withIdentifier: "LoginScreenID")
+//        }
+//        else
+//        {
+//            let homeStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+//            firstViewController = homeStoryBoard.instantiateViewController(withIdentifier: "HomeScreenID")
+//        }
+//        
+//        self.window?.rootViewController = firstViewController
+//        self.window?.makeKeyAndVisible()
         
         return true
     }

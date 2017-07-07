@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fwY-Gt-5pD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="HomeScreenID" id="BYZ-38-t0r" customClass="ViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeScreenID" id="BYZ-38-t0r" customClass="LoginScreenViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,24 +21,244 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vdu-Lu-PMP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </scrollView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k12-5P-LaL">
+                                <rect key="frame" x="16" y="153" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X9c-0f-loB">
+                                <rect key="frame" x="16" y="91" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="vdu-Lu-PMP" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ERz-S4-kxO"/>
-                            <constraint firstAttribute="centerY" secondItem="vdu-Lu-PMP" secondAttribute="centerY" id="cFv-Qu-aC3"/>
-                            <constraint firstAttribute="centerX" secondItem="vdu-Lu-PMP" secondAttribute="centerX" id="gh8-kD-U2d"/>
-                            <constraint firstItem="vdu-Lu-PMP" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="qea-X2-bPa"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="scrollView" destination="vdu-Lu-PMP" id="yfA-D4-cFb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1069.5999999999999" y="700.29985007496259"/>
+        </scene>
+        <!--Battles View Controller-->
+        <scene sceneID="p4N-fp-txq">
+            <objects>
+                <viewController id="H69-mJ-Lo5" customClass="BattlesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DPi-4g-4Ze"/>
+                        <viewControllerLayoutGuide type="bottom" id="j1b-6v-zDh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DrZ-7p-LMj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="battles" selectedImage="battlesSelected" id="Uge-CD-B5e" userLabel="battlesItem">
+                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WQr-0K-WIX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="390" y="1462"/>
+        </scene>
+        <!--Segue To Camera View-->
+        <scene sceneID="HYI-b7-IRQ">
+            <objects>
+                <viewController id="Zfj-qo-huV" customClass="SegueToCameraView" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wnh-T4-1hO"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZJN-vw-RpT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y0d-N2-o8f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="Camera" selectedImage="CameraSelected" id="vib-8D-Ghr">
+                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                    </tabBarItem>
+                    <connections>
+                        <segue destination="Gc3-ck-ll3" kind="presentation" identifier="CameraSegue" id="ccw-8h-P9d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yPR-fj-VCd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1909.5999999999999" y="1460.4197901049477"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="fLy-yM-Xof">
+            <objects>
+                <viewController id="Gc3-ck-ll3" customClass="CameraViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IHk-pf-fhV"/>
+                        <viewControllerLayoutGuide type="bottom" id="2DG-EY-f7p"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tOo-Ve-Okr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ibS-ob-yHJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFf-k8-mbR">
+                                <rect key="frame" x="137" y="547" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Capture"/>
+                                <connections>
+                                    <action selector="startCapture:" destination="Gc3-ck-ll3" eventType="touchUpInside" id="T0C-91-Wpx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSi-dx-2H2">
+                                <rect key="frame" x="245" y="584" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="CameraTraseira"/>
+                                <connections>
+                                    <action selector="setCamera:" destination="Gc3-ck-ll3" eventType="touchUpInside" id="F3K-zv-MYL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hf-SQ-Rl7">
+                                <rect key="frame" x="79" y="584" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Flash"/>
+                                <connections>
+                                    <action selector="activateFlash:" destination="Gc3-ck-ll3" eventType="touchUpInside" id="rfB-6e-pNC"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LEO-SJ-eT3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQg-vv-D1I">
+                                <rect key="frame" x="16" y="28" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="CancelCaptureSession:" destination="Gc3-ck-ll3" eventType="touchUpInside" id="t2Q-Qf-e16"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="fSi-dx-2H2" id="CBC-XQ-vb9"/>
+                        <outlet property="cameraView" destination="ibS-ob-yHJ" id="OTz-l7-Of0"/>
+                        <outlet property="captureButton" destination="KFf-k8-mbR" id="tyT-Et-QMw"/>
+                        <outlet property="flashButton" destination="1hf-SQ-Rl7" id="pf4-r7-PT1"/>
+                        <outlet property="pickedImage" destination="LEO-SJ-eT3" id="9pO-9e-Ixv"/>
+                        <segue destination="fwY-Gt-5pD" kind="show" identifier="CancelCaptureSession" id="aff-Dx-Ecq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HnA-P1-G5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1909.5999999999999" y="1529.6851574212894"/>
+        </scene>
+        <!--Judge View Controller-->
+        <scene sceneID="3lT-mM-0vp">
+            <objects>
+                <viewController id="Vxa-Zm-9b9" customClass="JudgeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dvd-8D-hfZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="S0C-yY-hpN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R29-Y5-HuE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="gavel" selectedImage="gavelSelected" id="T64-IV-nMs" userLabel="judgeItem">
+                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BYK-UN-UD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2662" y="1460"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="KI6-DR-BS4">
+            <objects>
+                <viewController id="1nx-KS-HQ5" customClass="ProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NsW-3D-vQW"/>
+                        <viewControllerLayoutGuide type="bottom" id="qDL-a9-1cR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BGZ-gS-o8s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="profile" selectedImage="profileSelected" id="eZY-JT-4hA" userLabel="profileItem">
+                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DL7-UD-5aj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3409" y="1460"/>
+        </scene>
+        <!--Public Battle View Controller-->
+        <scene sceneID="Xhr-Y8-ENy">
+            <objects>
+                <viewController id="VPT-yU-XXG" customClass="PublicBattleViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ewu-Ur-nsc"/>
+                        <viewControllerLayoutGuide type="bottom" id="R3H-AG-ybE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lTi-91-Q9k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="world" selectedImage="worldSelected" id="mls-Yx-Xh7" userLabel="publicItem">
+                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mgk-sy-TD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1158" y="1461"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="up4-f9-beD">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="fwY-Gt-5pD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="UBS-ga-QEh">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="H69-mJ-Lo5" kind="relationship" relationship="viewControllers" id="Uww-S1-AEP"/>
+                        <segue destination="VPT-yU-XXG" kind="relationship" relationship="viewControllers" id="C6I-15-OeT"/>
+                        <segue destination="Zfj-qo-huV" kind="relationship" relationship="viewControllers" id="1WP-Xg-Hat"/>
+                        <segue destination="Vxa-Zm-9b9" kind="relationship" relationship="viewControllers" id="Dbq-f9-zAi"/>
+                        <segue destination="1nx-KS-HQ5" kind="relationship" relationship="viewControllers" id="jI6-Ze-nCm"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ce-Iw-1xk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1911.2" y="701.19940029985014"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Camera" width="40" height="40"/>
+        <image name="CameraSelected" width="40" height="40"/>
+        <image name="CameraTraseira" width="40" height="40"/>
+        <image name="Capture" width="90" height="90"/>
+        <image name="Flash" width="40" height="40"/>
+        <image name="battles" width="40" height="40"/>
+        <image name="battlesSelected" width="40" height="40"/>
+        <image name="gavel" width="40" height="40"/>
+        <image name="gavelSelected" width="40" height="40"/>
+        <image name="profile" width="40" height="40"/>
+        <image name="profileSelected" width="40" height="40"/>
+        <image name="world" width="40" height="40"/>
+        <image name="worldSelected" width="40" height="40"/>
+    </resources>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
