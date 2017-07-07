@@ -9,4 +9,14 @@
 import Foundation
 import UIKit
 
-class ProfileViewController: UIViewController {}
+class ProfileViewController: UIViewController {
+
+    @IBAction func logOutAction(_ sender: Any) {
+        let defautls = UserDefaults.standard
+        
+        defautls.set("not logged", forKey: "login")
+        print("realizou log Out")
+        // voltar pra tela de login
+        
+    }
+}

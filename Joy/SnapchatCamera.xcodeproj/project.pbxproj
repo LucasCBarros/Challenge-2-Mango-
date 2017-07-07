@@ -16,6 +16,9 @@
 		A257120E1F0ECA840001376E /* PublicBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A257120D1F0ECA840001376E /* PublicBattleViewController.swift */; };
 		A25712101F0F1D290001376E /* SegueToCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A257120F1F0F1D290001376E /* SegueToCameraView.swift */; };
 		A2D4E6A01F08489D00E82F18 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2D4E69F1F08489D00E82F18 /* Images.xcassets */; };
+		A2F600FD1F10032900C55E52 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F600FA1F10032900C55E52 /* LoginScreen.storyboard */; };
+		A2F600FE1F10032900C55E52 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F600FB1F10032900C55E52 /* LoginScreenViewController.swift */; };
+		A2F600FF1F10032900C55E52 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F600FC1F10032900C55E52 /* RegisterViewController.swift */; };
 		AC94AD611B8E40BF002D9AD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94AD601B8E40BF002D9AD2 /* AppDelegate.swift */; };
 		AC94AD661B8E40BF002D9AD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC94AD641B8E40BF002D9AD2 /* Main.storyboard */; };
 		AC94AD6B1B8E40BF002D9AD2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC94AD691B8E40BF002D9AD2 /* LaunchScreen.xib */; };
@@ -43,6 +46,9 @@
 		A257120D1F0ECA840001376E /* PublicBattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicBattleViewController.swift; sourceTree = "<group>"; };
 		A257120F1F0F1D290001376E /* SegueToCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueToCameraView.swift; sourceTree = "<group>"; };
 		A2D4E69F1F08489D00E82F18 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A2F600FA1F10032900C55E52 /* LoginScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
+		A2F600FB1F10032900C55E52 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
+		A2F600FC1F10032900C55E52 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		AC94AD5B1B8E40BF002D9AD2 /* SnapchatCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapchatCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC94AD5F1B8E40BF002D9AD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC94AD601B8E40BF002D9AD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +98,9 @@
 		9C5523FB1F057F4D00EB312C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A2F600FA1F10032900C55E52 /* LoginScreen.storyboard */,
+				A2F600FB1F10032900C55E52 /* LoginScreenViewController.swift */,
+				A2F600FC1F10032900C55E52 /* RegisterViewController.swift */,
 				AC94AD841B8E41A1002D9AD2 /* CameraViewController.swift */,
 				A257120F1F0F1D290001376E /* SegueToCameraView.swift */,
 				A25712071F0ECA3E0001376E /* BattlesViewController.swift */,
@@ -262,6 +271,7 @@
 				AC94AD661B8E40BF002D9AD2 /* Main.storyboard in Resources */,
 				9C5218F21F0C249A00D2D201 /* GoogleService-Info.plist in Resources */,
 				AC94AD6B1B8E40BF002D9AD2 /* LaunchScreen.xib in Resources */,
+				A2F600FD1F10032900C55E52 /* LoginScreen.storyboard in Resources */,
 				A2D4E6A01F08489D00E82F18 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,8 +383,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2F600FF1F10032900C55E52 /* RegisterViewController.swift in Sources */,
 				A25712101F0F1D290001376E /* SegueToCameraView.swift in Sources */,
 				A257120A1F0ECA520001376E /* ProfileViewController.swift in Sources */,
+				A2F600FE1F10032900C55E52 /* LoginScreenViewController.swift in Sources */,
 				A257120E1F0ECA840001376E /* PublicBattleViewController.swift in Sources */,
 				A257120C1F0ECA6E0001376E /* JudgeViewController.swift in Sources */,
 				A25712081F0ECA3E0001376E /* BattlesViewController.swift in Sources */,
