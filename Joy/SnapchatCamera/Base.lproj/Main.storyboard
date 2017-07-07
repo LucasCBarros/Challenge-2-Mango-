@@ -149,7 +149,7 @@
         <!--Profile View Controller-->
         <scene sceneID="KI6-DR-BS4">
             <objects>
-                <viewController id="1nx-KS-HQ5" customClass="ProfileViewController" sceneMemberID="viewController">
+                <viewController id="1nx-KS-HQ5" customClass="ProfileViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NsW-3D-vQW"/>
                         <viewControllerLayoutGuide type="bottom" id="qDL-a9-1cR"/>
@@ -158,12 +158,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXK-1h-bvj">
-                                <rect key="frame" x="160" y="318" width="55" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybX-Db-XQs">
+                                <rect key="frame" x="92" y="149" width="195" height="148"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log Out"/>
+                                <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="logOutAction:" destination="1nx-KS-HQ5" eventType="touchUpInside" id="qyi-OB-x7d"/>
+                                    <action selector="logOutAction:" destination="1nx-KS-HQ5" eventType="touchUpInside" id="Qxl-e5-lnW"/>
+                                    <segue destination="aQ3-UP-0Zy" kind="show" identifier="ToLoginScreenID" id="Jhm-ku-KeV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -175,7 +176,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DL7-UD-5aj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3409" y="1460"/>
+            <point key="canvasLocation" x="3408.8000000000002" y="1459.52023988006"/>
+        </scene>
+        <!--LoginScreenID-->
+        <scene sceneID="gbF-3j-ZzP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LoginScreen" referencedIdentifier="LoginScreenID" id="aQ3-UP-0Zy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cjg-Tr-T7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4250" y="1281"/>
         </scene>
         <!--Public Battle View Controller-->
         <scene sceneID="Xhr-Y8-ENy">

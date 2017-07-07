@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class RegisterViewController: UIViewController, UITextFieldDelegate
+class RegisterViewController: LoginViewController
 {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -18,9 +18,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate
     {
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
-        
-        self.emailTextField.clearsOnBeginEditing = true
-        self.passwordTextField.clearsOnBeginEditing = true
     }
     
     @IBAction func registerButton(_ sender: Any)
@@ -34,23 +31,19 @@ class RegisterViewController: UIViewController, UITextFieldDelegate
             {
                 // Troca de tela
                 print("register ok")
+                self.loginHandler(identifier: "RegisterToMainID")
             }
             else
             {
-                // Trata erro
+                print("Erro no registro")
             }
         }
         
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
     
-    func loginHandler()
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
-        let defautls = UserDefaults.standard
-        
-        defautls.set("logged", forKey: "login")
-        print("salvou o login")
+        self.passwordTextField.resignFirstResponder()
+        self.emailTextField.resignFirstResponder()
     }
 }

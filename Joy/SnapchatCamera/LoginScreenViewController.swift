@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class LoginScreenViewController: UIViewController, UITextFieldDelegate
+class LoginScreenViewController: LoginViewController
 {
     
     
@@ -25,8 +25,6 @@ class LoginScreenViewController: UIViewController, UITextFieldDelegate
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         
-        self.emailTextField.clearsOnBeginEditing = true
-        self.passwordTextField.clearsOnBeginEditing = true
     }
     
     @IBAction func logInButton(_ sender: Any)
@@ -39,32 +37,20 @@ class LoginScreenViewController: UIViewController, UITextFieldDelegate
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let usr = user
             {
-                print("logou")
-                self.loginHandler()
+                self.loginHandler(identifier: "LoginScreenToMainID")
+            }
+            else
+            {
+                print("erro no login sem registro")
             }
         }
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
     {
-        self.view.endEditing(true)
-        print("return")
-        return true
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.emailTextField.resignFirstResponder()
         self.passwordTextField.resignFirstResponder()
     }
     
-    func loginHandler()
-    {
-        let defautls = UserDefaults.standard
         
-        defautls.set("logged", forKey: "login")
-        print("salvou o login")
-        
-        self.performSegue(withIdentifier: "Main", sender: self)
-    }
-    
 }

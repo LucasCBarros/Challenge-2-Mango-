@@ -19,6 +19,7 @@
 		A2F600FD1F10032900C55E52 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2F600FA1F10032900C55E52 /* LoginScreen.storyboard */; };
 		A2F600FE1F10032900C55E52 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F600FB1F10032900C55E52 /* LoginScreenViewController.swift */; };
 		A2F600FF1F10032900C55E52 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F600FC1F10032900C55E52 /* RegisterViewController.swift */; };
+		A2F601021F1014AC00C55E52 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F601011F1014AC00C55E52 /* LoginViewController.swift */; };
 		AC94AD611B8E40BF002D9AD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94AD601B8E40BF002D9AD2 /* AppDelegate.swift */; };
 		AC94AD661B8E40BF002D9AD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC94AD641B8E40BF002D9AD2 /* Main.storyboard */; };
 		AC94AD6B1B8E40BF002D9AD2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC94AD691B8E40BF002D9AD2 /* LaunchScreen.xib */; };
@@ -49,6 +50,7 @@
 		A2F600FA1F10032900C55E52 /* LoginScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 		A2F600FB1F10032900C55E52 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		A2F600FC1F10032900C55E52 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A2F601011F1014AC00C55E52 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC94AD5B1B8E40BF002D9AD2 /* SnapchatCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapchatCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC94AD5F1B8E40BF002D9AD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC94AD601B8E40BF002D9AD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,10 +100,8 @@
 		9C5523FB1F057F4D00EB312C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A2F600FA1F10032900C55E52 /* LoginScreen.storyboard */,
-				A2F600FB1F10032900C55E52 /* LoginScreenViewController.swift */,
-				A2F600FC1F10032900C55E52 /* RegisterViewController.swift */,
 				AC94AD841B8E41A1002D9AD2 /* CameraViewController.swift */,
+				A2F601001F10144F00C55E52 /* Login */,
 				A257120F1F0F1D290001376E /* SegueToCameraView.swift */,
 				A25712071F0ECA3E0001376E /* BattlesViewController.swift */,
 				A25712091F0ECA520001376E /* ProfileViewController.swift */,
@@ -111,6 +111,17 @@
 				AC94AD691B8E40BF002D9AD2 /* LaunchScreen.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		A2F601001F10144F00C55E52 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A2F600FA1F10032900C55E52 /* LoginScreen.storyboard */,
+				A2F600FB1F10032900C55E52 /* LoginScreenViewController.swift */,
+				A2F600FC1F10032900C55E52 /* RegisterViewController.swift */,
+				A2F601011F1014AC00C55E52 /* LoginViewController.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		AC94AD521B8E40BF002D9AD2 = {
@@ -391,6 +402,7 @@
 				A257120C1F0ECA6E0001376E /* JudgeViewController.swift in Sources */,
 				A25712081F0ECA3E0001376E /* BattlesViewController.swift in Sources */,
 				AC94AD611B8E40BF002D9AD2 /* AppDelegate.swift in Sources */,
+				A2F601021F1014AC00C55E52 /* LoginViewController.swift in Sources */,
 				AC94AD861B8E41A1002D9AD2 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
