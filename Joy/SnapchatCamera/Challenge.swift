@@ -68,7 +68,10 @@ class Challenge
                 image = nil
             } else {
                 // Data for "images/island.jpg" is returned
-                image = UIImage(data: data!)
+                let tryImage = UIImage(data: data)
+                {
+                    //image = tryImage
+                }
             }
         }
         

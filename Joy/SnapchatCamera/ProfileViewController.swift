@@ -9,12 +9,10 @@
 import Foundation
 import UIKit
 
-class ProfileViewController: UIViewController {
-
-    
-    @IBAction func loadImage(_ sender: Any) {
-    }
-    @IBAction func logOutAction(_ sender: Any) {
+class ProfileViewController: UIViewController
+{
+    @IBAction func logOutAction(_ sender: Any)
+    {
         let defautls = UserDefaults.standard
         
         defautls.set("not logged", forKey: "login")
@@ -23,5 +21,4 @@ class ProfileViewController: UIViewController {
         self.performSegue(withIdentifier: "ToLoginScreenID", sender: self)
         
     }
-
 }
