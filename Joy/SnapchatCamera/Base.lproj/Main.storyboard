@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -158,17 +159,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybX-Db-XQs">
-                                <rect key="frame" x="92" y="149" width="195" height="148"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybX-Db-XQs">
+                                <rect key="frame" x="91.5" y="27" width="192" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Log Out"/>
                                 <connections>
                                     <action selector="logOutAction:" destination="1nx-KS-HQ5" eventType="touchUpInside" id="Qxl-e5-lnW"/>
                                     <segue destination="aQ3-UP-0Zy" kind="show" identifier="ToLoginScreenID" id="Jhm-ku-KeV"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O7T-aZ-MuM">
+                                <rect key="frame" x="73" y="148" width="229" height="401"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="401" id="Q8U-fh-bLA"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfl-yF-7YQ">
+                                <rect key="frame" x="91.5" y="81" width="192" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="xlI-Ha-CdY"/>
+                                </constraints>
+                                <state key="normal" title="Ver última foto tirada"/>
+                                <connections>
+                                    <action selector="loadImage:" destination="1nx-KS-HQ5" eventType="touchUpInside" id="bVG-6F-igI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="O7T-aZ-MuM" firstAttribute="centerX" secondItem="BGZ-gS-o8s" secondAttribute="centerX" id="1JL-1E-Hdz"/>
+                            <constraint firstItem="ybX-Db-XQs" firstAttribute="centerX" secondItem="BGZ-gS-o8s" secondAttribute="centerX" id="6pP-cr-dnz"/>
+                            <constraint firstItem="qDL-a9-1cR" firstAttribute="top" secondItem="O7T-aZ-MuM" secondAttribute="bottom" constant="69" id="OOl-Xt-iPF"/>
+                            <constraint firstItem="O7T-aZ-MuM" firstAttribute="leading" secondItem="BGZ-gS-o8s" secondAttribute="leadingMargin" constant="57" id="Qgl-e9-I4W"/>
+                            <constraint firstItem="Wfl-yF-7YQ" firstAttribute="centerX" secondItem="BGZ-gS-o8s" secondAttribute="centerX" id="Qo3-MN-Onp"/>
+                            <constraint firstItem="Wfl-yF-7YQ" firstAttribute="leading" secondItem="ybX-Db-XQs" secondAttribute="leading" id="hoz-ME-sT7"/>
+                            <constraint firstItem="Wfl-yF-7YQ" firstAttribute="top" secondItem="ybX-Db-XQs" secondAttribute="bottom" constant="24" id="lN2-Sk-TLd"/>
+                            <constraint firstItem="O7T-aZ-MuM" firstAttribute="top" secondItem="Wfl-yF-7YQ" secondAttribute="bottom" constant="37" id="mDk-Az-ySn"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="profile" selectedImage="profileSelected" id="eZY-JT-4hA" userLabel="profileItem">
                         <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>

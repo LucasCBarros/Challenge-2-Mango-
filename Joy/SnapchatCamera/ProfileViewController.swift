@@ -12,6 +12,8 @@ import UIKit
 class ProfileViewController: UIViewController {
 
     
+    @IBAction func loadImage(_ sender: Any) {
+    }
     @IBAction func logOutAction(_ sender: Any) {
         let defautls = UserDefaults.standard
         
