@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class RegisterViewController: LoginViewController
 {
@@ -24,21 +23,12 @@ class RegisterViewController: LoginViewController
     {
         let email = self.emailTextField.text!
         let password = self.passwordTextField.text!
-        // valida dados
         
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            if user != nil
-            {
-                // Troca de tela
-                print("register ok")
-                self.loginHandler(identifier: "RegisterToMainID")
-            }
-            else
-            {
-                print("Erro no registro")
-            }
+        
+        FirebaseLib.userRegister(account: email, password: password, username: password, name: "marcelo", age: "22")
+        { 
+            self.loginHandler(identifier: "RegisterToMainID")
         }
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)

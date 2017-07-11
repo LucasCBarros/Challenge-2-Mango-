@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -158,8 +159,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybX-Db-XQs">
-                                <rect key="frame" x="160" y="27" width="55" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybX-Db-XQs">
+                                <rect key="frame" x="160" y="40" width="55" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
@@ -171,6 +172,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ybX-Db-XQs" firstAttribute="centerX" secondItem="BGZ-gS-o8s" secondAttribute="centerX" id="6pP-cr-dnz"/>
+                            <constraint firstItem="ybX-Db-XQs" firstAttribute="top" secondItem="NsW-3D-vQW" secondAttribute="bottom" constant="20" id="qxn-t3-eEa"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="profile" selectedImage="profileSelected" id="eZY-JT-4hA" userLabel="profileItem">
@@ -189,10 +191,10 @@
             </objects>
             <point key="canvasLocation" x="4250" y="1281"/>
         </scene>
-        <!--Public Battle View Controller-->
+        <!--Public Battles View Controller-->
         <scene sceneID="Xhr-Y8-ENy">
             <objects>
-                <viewController id="VPT-yU-XXG" customClass="PublicBattleViewController" sceneMemberID="viewController">
+                <viewController id="VPT-yU-XXG" customClass="PublicBattlesViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ewu-Ur-nsc"/>
                         <viewControllerLayoutGuide type="bottom" id="R3H-AG-ybE"/>
@@ -201,19 +203,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmv-R6-3Sb">
-                                <rect key="frame" x="58" y="-42" width="192" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="192" id="pMs-IV-chs"/>
-                                </constraints>
-                                <state key="normal" title="Ver última foto tirada"/>
-                                <connections>
-                                    <action selector="loadImage:" destination="1nx-KS-HQ5" eventType="touchUpInside" id="gNT-dh-JdU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qN7-2m-lfi">
-                                <rect key="frame" x="121" y="39" width="192" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qN7-2m-lfi">
+                                <rect key="frame" x="92" y="39" width="192" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="192" id="4be-f9-2Jk"/>
@@ -221,23 +212,48 @@
                                 <state key="normal" title="Ver última foto tirada"/>
                                 <connections>
                                     <action selector="loadImage:" destination="1nx-KS-HQ5" eventType="touchUpInside" id="hB5-0x-AoL"/>
+                                    <action selector="loadImage:" destination="VPT-yU-XXG" eventType="touchUpInside" id="xer-Of-AdQ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ey-dK-jCi">
-                                <rect key="frame" x="73" y="112" width="229" height="401"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ey-dK-jCi">
+                                <rect key="frame" x="73" y="133" width="229" height="401"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="401" id="L5J-dk-FQr"/>
                                 </constraints>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="QBZ-uc-diw">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXD-gb-wDi">
+                                <rect key="frame" x="128" y="561" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="teste:" destination="VPT-yU-XXG" eventType="touchUpInside" id="wGj-Sz-wAu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2Ey-dK-jCi" firstAttribute="top" secondItem="Pmv-R6-3Sb" secondAttribute="bottom" constant="37" id="d00-3l-J0g"/>
+                            <constraint firstItem="QBZ-uc-diw" firstAttribute="centerY" secondItem="lTi-91-Q9k" secondAttribute="centerY" id="4k3-2i-Sp6"/>
+                            <constraint firstItem="2Ey-dK-jCi" firstAttribute="centerX" secondItem="lTi-91-Q9k" secondAttribute="centerX" id="C3x-S3-z8A"/>
+                            <constraint firstItem="qN7-2m-lfi" firstAttribute="top" secondItem="ewu-Ur-nsc" secondAttribute="bottom" constant="19" id="Dof-N6-cOR"/>
+                            <constraint firstItem="2Ey-dK-jCi" firstAttribute="leading" secondItem="lTi-91-Q9k" secondAttribute="leadingMargin" constant="57" id="GfM-yU-5I3"/>
+                            <constraint firstItem="qN7-2m-lfi" firstAttribute="centerX" secondItem="lTi-91-Q9k" secondAttribute="centerX" id="GhQ-8D-2bt"/>
+                            <constraint firstItem="qN7-2m-lfi" firstAttribute="centerX" secondItem="2Ey-dK-jCi" secondAttribute="centerX" id="H1d-0l-xwc"/>
+                            <constraint firstItem="2Ey-dK-jCi" firstAttribute="centerY" secondItem="lTi-91-Q9k" secondAttribute="centerY" id="pKI-DO-mbM"/>
+                            <constraint firstItem="QBZ-uc-diw" firstAttribute="centerX" secondItem="lTi-91-Q9k" secondAttribute="centerX" id="wa0-Oa-o3z"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="world" selectedImage="worldSelected" id="mls-Yx-Xh7" userLabel="publicItem">
                         <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="QBZ-uc-diw" id="Da7-9X-0ww"/>
+                        <outlet property="image" destination="2Ey-dK-jCi" id="MsZ-Sn-VrY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mgk-sy-TD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

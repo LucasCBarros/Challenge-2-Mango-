@@ -107,7 +107,8 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             stillImageOutput.captureStillImageAsynchronously(from: videoConnection, completionHandler: { (imageDataSampleBuffer, error) in
                     let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
                     let image = UIImage(data: imageData!)
-                    Challenge.storePhoto(photoData: imageData!)
+                
+                   // FirebaseLib.storePhoto(user: <#String#>, photoData: imageData!)
                 
                     print("image taked: \(image)")
                     self.pickedImage.image = image!
