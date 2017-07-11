@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RegisterViewController: LoginViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
@@ -168,33 +169,27 @@ class RegisterViewController: LoginViewController, UIImagePickerControllerDelega
         // send data to server to related collumns
         let email = self.emailTxt.text!
         let password = self.passwordTxt.text!
+        let username = self.usernameTxt.text!
 
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            if user != nil
+        
+        FirebaseLib.userRegister(account: email, password: password, username: username, name: "marcelo", age: "22" )
+        { (error) in
+            
+            if error == nil
             {
-                // Troca de tela
-                print("register ok")
                 self.loginHandler(identifier: "RegisterToMainID")
+                print("nao deu erro loser")
             }
-            else {
-
+            else
+            {
+                print("deu erro isso campeao")
                 // show alert message
-                let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Error", message: error, preferredStyle: UIAlertControllerStyle.alert)
                 let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
             }
-
-    /* @IBAction func registerButton(_ sender: Any)
-    {
-        let email = self.emailTextField.text!
-        let password = self.passwordTextField.text!
-
-
-        FirebaseLib.userRegister(account: email, password: password, username: password, name: "marcelo", age: "22")
-        {
-            self.loginHandler(identifier: "RegisterToMainID")
-        } */
+        }
     }
 
     // clicked cancel

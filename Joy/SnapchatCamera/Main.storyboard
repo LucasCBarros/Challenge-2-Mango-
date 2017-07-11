@@ -191,40 +191,6 @@
             </objects>
             <point key="canvasLocation" x="5479" y="2197"/>
         </scene>
-        <!--Profile View Controller-->
-        <scene sceneID="KI6-DR-BS4">
-            <objects>
-                <viewController id="1nx-KS-HQ5" customClass="ProfileViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="NsW-3D-vQW"/>
-                        <viewControllerLayoutGuide type="bottom" id="qDL-a9-1cR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BGZ-gS-o8s">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybX-Db-XQs">
-                                <rect key="frame" x="160" y="71" width="55" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Log Out"/>
-                                <connections>
-                                    <action selector="logOutAction:" destination="1nx-KS-HQ5" eventType="touchUpInside" id="Qxl-e5-lnW"/>
-                                    <segue destination="aQ3-UP-0Zy" kind="presentation" identifier="ToLoginScreenID" id="Jhm-ku-KeV"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ybX-Db-XQs" firstAttribute="centerX" secondItem="BGZ-gS-o8s" secondAttribute="centerX" id="6pP-cr-dnz"/>
-                            <constraint firstItem="ybX-Db-XQs" firstAttribute="top" secondItem="NsW-3D-vQW" secondAttribute="bottom" constant="7" id="u5t-Ae-Zz5"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="2SN-Ak-wvX"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DL7-UD-5aj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7166" y="2197"/>
-        </scene>
         <!--LoginScreenID-->
         <scene sceneID="gbF-3j-ZzP">
             <objects>
@@ -245,50 +211,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pmv-R6-3Sb">
-                                <rect key="frame" x="58" y="45" width="192" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="192" id="pMs-IV-chs"/>
-                                </constraints>
-                                <state key="normal" title="Ver última foto tirada"/>
-                                <connections>
-                                    <action selector="loadImage:" destination="1nx-KS-HQ5" eventType="touchUpInside" id="gNT-dh-JdU"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ey-dK-jCi">
                                 <rect key="frame" x="73" y="112" width="229" height="401"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="401" id="L5J-dk-FQr"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qN7-2m-lfi">
-                                <rect key="frame" x="121" y="39" width="192" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qN7-2m-lfi">
+                                <rect key="frame" x="91" y="80" width="192" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="192" id="4be-f9-2Jk"/>
                                 </constraints>
                                 <state key="normal" title="Ver última foto tirada"/>
                                 <connections>
-                                    <action selector="loadImage:" destination="1nx-KS-HQ5" eventType="touchUpInside" id="hB5-0x-AoL"/>
                                     <action selector="loadImage:" destination="VPT-yU-XXG" eventType="touchUpInside" id="xer-Of-AdQ"/>
                                 </connections>
                             </button>
-
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="R3H-AG-ybE" firstAttribute="top" secondItem="2Ey-dK-jCi" secondAttribute="bottom" constant="105" id="2gz-nW-oV7"/>
-                            <constraint firstItem="Pmv-R6-3Sb" firstAttribute="leading" secondItem="lTi-91-Q9k" secondAttribute="leadingMargin" constant="42" id="JES-jM-PBI"/>
-                            <constraint firstItem="2Ey-dK-jCi" firstAttribute="top" secondItem="qN7-2m-lfi" secondAttribute="bottom" constant="43" id="ahE-GT-4Uv"/>
-                            <constraint firstItem="2Ey-dK-jCi" firstAttribute="top" secondItem="Pmv-R6-3Sb" secondAttribute="bottom" constant="37" id="d00-3l-J0g"/>
+                            <constraint firstItem="2Ey-dK-jCi" firstAttribute="top" secondItem="qN7-2m-lfi" secondAttribute="bottom" constant="2" id="4aj-vm-mxS"/>
                             <constraint firstItem="2Ey-dK-jCi" firstAttribute="leading" secondItem="lTi-91-Q9k" secondAttribute="leadingMargin" constant="57" id="fFb-XB-gvY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qN7-2m-lfi" secondAttribute="trailing" constant="46" id="o17-RE-4Tl"/>
                             <constraint firstItem="2Ey-dK-jCi" firstAttribute="centerX" secondItem="lTi-91-Q9k" secondAttribute="centerX" id="rvK-3T-Njh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qRY-By-pAO"/>
-
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mgk-sy-TD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -387,7 +337,7 @@
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MCX-MY-goh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="MCX-MY-goh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -408,18 +358,98 @@
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3yR-bI-aoU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3yR-bI-aoU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="1nx-KS-HQ5" kind="relationship" relationship="rootViewController" id="If8-Fc-ydD"/>
+                        <segue destination="oBl-RW-y2x" kind="show" id="Jhi-cx-GW3"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1K-YM-TBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7165.6000000000004" y="1459.52023988006"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="Arm-hd-Mby">
+            <objects>
+                <viewController id="oBl-RW-y2x" customClass="ProfileViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8nZ-7e-ev2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ng5-f4-axz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9xI-uN-fCS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVq-10-RRe">
+                                <rect key="frame" x="57" y="101" width="55" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutAction:" destination="oBl-RW-y2x" eventType="touchUpInside" id="elh-9g-LxA"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nqn-Xc-ZGB">
+                                <rect key="frame" x="0.0" y="161" width="375" height="457"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eeK-rT-bvu">
+                                    <size key="itemSize" width="126" height="107"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="lJe-II-9XR" customClass="ImageCollectionViewCell" customModule="SnapchatCamera" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="107"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="126" height="107"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14u-qt-3Dq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="126" height="107"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="imageView" destination="14u-qt-3Dq" id="4v4-nw-sf5"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="oBl-RW-y2x" id="dud-Fj-pj2"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqg-Ns-jic">
+                                <rect key="frame" x="259" y="96" width="59" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Reload"/>
+                                <connections>
+                                    <action selector="reloadAction:" destination="oBl-RW-y2x" eventType="touchUpInside" id="oGx-iV-raE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WVq-10-RRe" firstAttribute="centerX" secondItem="9xI-uN-fCS" secondAttribute="centerX" id="irK-Pc-gV6"/>
+                            <constraint firstItem="WVq-10-RRe" firstAttribute="top" secondItem="8nZ-7e-ev2" secondAttribute="bottom" constant="7" id="lKa-Tx-gqc"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="profile" selectedImage="profileSelected" id="Ahi-dk-DOO" userLabel="profileItem">
+                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="photoCollection" destination="nqn-Xc-ZGB" id="szV-6e-ytE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LJI-8m-w83" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7165.6000000000004" y="2196.2518740629689"/>
         </scene>
     </scenes>
     <resources>

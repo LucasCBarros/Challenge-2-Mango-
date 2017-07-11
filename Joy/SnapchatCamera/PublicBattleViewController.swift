@@ -24,12 +24,4 @@ class PublicBattlesViewController: UIViewController
             self.activityIndicator.stopAnimating()
         }
     }
-    
-    @IBAction func teste(_ sender: Any) {
-        FirebaseLib.getUserInfo(userID: "marco@gmail.com")
-    }
-    override func didReceiveMemoryWarning() {
-        
-        print("Faltou memoria")
-    }
 }

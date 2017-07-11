@@ -96,9 +96,9 @@ class FirebaseLib
 //           self.ref.child("Usuarios").childByAutoId().setValue(data)
 //    }
     
-static func userRegister(account: String, password: String, username: String, name: String, age: String,
-    completionHandler: @escaping (Void) -> Void)
-{
+    static func userRegister(account: String, password: String, username: String, name: String, age: String,
+                             completionHandler: @escaping (String?) -> Void)
+    {
         // verifica se a conta e o username já não existem!!!!!!!!!!!!!!!!!
         
         Auth.auth().createUser(withEmail: account, password: password) { (user, error) in
@@ -107,23 +107,34 @@ static func userRegister(account: String, password: String, username: String, na
                 print("register ok")
                 DispatchQueue.main.async
                 {
-                    completionHandler()
+                    completionHandler(error?.localizedDescription)
                 }
             }
             else
             {
+                
+                DispatchQueue.main.async
+                    {
+                        completionHandler(error?.localizedDescription)
+                }
+                
                 print("Register error")
             }
         }
         
         var ref: DatabaseReference!
         ref = Database.database().reference()
-        
-        let user = ref.child("usersData").child(username)
-        user.child("account").setValue(account)
-        user.child("name").setValue(name)
-        user.child("age").setValue(age)
+    
+
+        let user =  ref.child("usersData").child(username)
+        if user != nil
+        {
+            user.child("account").setValue(account)
+            user.child("name").setValue(name)
+            user.child("age").setValue(age)
+        }
     }
+    
 enum UserData
 {
     case email, name, age
