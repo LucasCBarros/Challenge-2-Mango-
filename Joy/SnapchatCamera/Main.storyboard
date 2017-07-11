@@ -233,10 +233,10 @@
             </objects>
             <point key="canvasLocation" x="7845" y="2197"/>
         </scene>
-        <!--Public Battle View Controller-->
+        <!--Public Battles View Controller-->
         <scene sceneID="Xhr-Y8-ENy">
             <objects>
-                <viewController id="VPT-yU-XXG" customClass="PublicBattleViewController" sceneMemberID="viewController">
+                <viewController id="VPT-yU-XXG" customClass="PublicBattlesViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ewu-Ur-nsc"/>
                         <viewControllerLayoutGuide type="bottom" id="R3H-AG-ybE"/>
@@ -271,8 +271,10 @@
                                 <state key="normal" title="Ver última foto tirada"/>
                                 <connections>
                                     <action selector="loadImage:" destination="1nx-KS-HQ5" eventType="touchUpInside" id="hB5-0x-AoL"/>
+                                    <action selector="loadImage:" destination="VPT-yU-XXG" eventType="touchUpInside" id="xer-Of-AdQ"/>
                                 </connections>
                             </button>
+
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -286,6 +288,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qRY-By-pAO"/>
+
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mgk-sy-TD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

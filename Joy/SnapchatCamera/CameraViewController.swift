@@ -13,29 +13,29 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     @IBOutlet var cameraView: UIView!
     @IBOutlet var pickedImage: UIImageView!
-    
+
     @IBOutlet var DiscardButton: UIButton!
     @IBOutlet var UseButton: UIButton!
-    
+
     var captureSession = AVCaptureSession()
     var captureDevice: AVCaptureDevice?
     var previewLayer : AVCaptureVideoPreviewLayer?
     var stillImageOutput = AVCaptureStillImageOutput()
     var frontCamera: Bool = false
     var didtakePhoto = Bool()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         DiscardButton.isHidden = true
         UseButton.isHidden = true
-        
+
         captureSession.sessionPreset = AVCaptureSessionPresetPhoto
         frontCamera(frontCamera)
         if captureDevice != nil { beginSession() }
-        
+
         // Do any additional setup after loading the view.
-    }    
-    
+    }
+
     func beginSession() {
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         self.cameraView.layer.addSublayer(previewLayer!)
@@ -45,14 +45,14 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         stillImageOutput.outputSettings = [AVVideoCodecKey: AVVideoCodecJPEG]
         if captureSession.canAddOutput(stillImageOutput) {captureSession.addOutput((stillImageOutput))}
     }
-    
+
     @IBOutlet var cameraButton: UIButton!
     func frontCamera(_ front: Bool){
         var icon = UIImage()
         let devices = AVCaptureDevice.devices()
-        
+
         do {try captureSession.removeInput(AVCaptureDeviceInput(device: captureDevice))} catch { print ("error while looking for devices")}
-        
+
         for device in devices!{
             if ((device as AnyObject).hasMediaType(AVMediaTypeVideo)){
                 if front {
@@ -70,13 +70,13 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                         do {try captureSession.addInput(AVCaptureDeviceInput(device:captureDevice))} catch { print ("error while setting camera position")}
                         break }}}}
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+
+
     @IBOutlet var flashButton: UIButton!
     @IBAction func activateFlash(_ sender: UIButton) {
         if captureDevice!.hasTorch{
@@ -90,40 +90,42 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             } catch { print ("error while trying to activate flash") }
         }
     }
-    
+
     @IBAction func setCamera(_ sender: UIButton) {
-        //switch camera to frontal 
+        //switch camera to frontal
         frontCamera = !frontCamera
         captureSession.beginConfiguration()
         let inputs = captureSession.inputs as! [AVCaptureInput]
         for oldInput: AVCaptureInput in inputs {captureSession.removeInput(oldInput)}
-        
+
         frontCamera(frontCamera)
         captureSession.commitConfiguration()
     }
-    
-    
+
+
     @IBOutlet var captureButton: UIButton!
     @IBAction func startCapture(_ sender: UIButton) {
         captureAnotherPicture()
     }
-    
+
     func capturePicture() {
         if let videoConnection = stillImageOutput.connection(withMediaType: AVMediaTypeVideo){
             stillImageOutput.captureStillImageAsynchronously(from: videoConnection, completionHandler: { (imageDataSampleBuffer, error) in
                     let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
                     let image = UIImage(data: imageData!)
-                    //Challenge.storePhoto(photoData: imageData!)
-                
+
+
+                   // FirebaseLib.storePhoto(user: <#String#>, photoData: imageData!)
+
                     print("image taked: \(image)")
                     self.pickedImage.image = image
                     self.pickedImage.isHidden = false
-                
+
                     self.flashButton.isHidden = true
                     self.cameraButton.isHidden = true
                     self.flashButton.isEnabled = false
                     self.cameraButton.isEnabled = false
-                
+
                     self.DiscardButton.isHidden = false
                     self.UseButton.isHidden = false
                     self.DiscardButton.isEnabled = true
@@ -131,17 +133,17 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             })
         }
     }
-    
+
     func captureAnotherPicture(){
         if didtakePhoto == true {
             //self.previewPicture.pickedImage.isHidden = true
             self.pickedImage.isHidden = true
-            
+
             self.flashButton.isHidden = false
             self.cameraButton.isHidden = false
             self.flashButton.isEnabled = true
             self.cameraButton.isEnabled = true
-            
+
             self.DiscardButton.isHidden = true
             self.UseButton.isHidden = true
             didtakePhoto = false}
@@ -149,22 +151,22 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             captureSession.startRunning()
             didtakePhoto = true
             capturePicture()}
-        
+
     }
-    
-    
+
+
     @IBAction func CancelCaptureSession(_ sender: Any) {
         performSegue(withIdentifier: "CancelCaptureSession", sender: AnyObject.self)
     }
-    
-    
+
+
     @IBAction func DiscardPicture(_ sender: Any) {
         captureAnotherPicture()
     }
-    
-    
+
+
     @IBAction func usePicture(_ sender: Any) {
-        
+
     }
-    
+
 }

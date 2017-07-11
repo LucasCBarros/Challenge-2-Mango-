@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		34AE11F1E6995DD1880E335D /* Pods_SnapchatCameraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5887918661A0D60E0A77C4D /* Pods_SnapchatCameraTests.framework */; };
 		52F0EA7D4DAAF6E8A144095B /* Pods_SnapchatCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BAFC7BC5267EC3B3640754 /* Pods_SnapchatCamera.framework */; };
-		9C0B988D1F127F9A00375C08 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B988C1F127F9A00375C08 /* Challenge.swift */; };
+		9C0B988D1F127F9A00375C08 /* FirebaseLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B988C1F127F9A00375C08 /* FirebaseLib.swift */; };
 		9C5218F21F0C249A00D2D201 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C5218F11F0C249A00D2D201 /* GoogleService-Info.plist */; };
 		A20F4DF31F1515C00037EB24 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A20F4DEF1F1515C00037EB24 /* LoginScreen.storyboard */; };
 		A20F4DF41F1515C00037EB24 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20F4DF01F1515C00037EB24 /* LoginScreenViewController.swift */; };
@@ -45,7 +45,7 @@
 /* Begin PBXFileReference section */
 		4E3AC7818B4C18573DD65E8A /* Pods-SnapchatCamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapchatCamera.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnapchatCamera/Pods-SnapchatCamera.release.xcconfig"; sourceTree = "<group>"; };
 		97BAFC7BC5267EC3B3640754 /* Pods_SnapchatCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapchatCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C0B988C1F127F9A00375C08 /* Challenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		9C0B988C1F127F9A00375C08 /* FirebaseLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseLib.swift; sourceTree = "<group>"; };
 		9C5218F11F0C249A00D2D201 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A20F4DEF1F1515C00037EB24 /* LoginScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 		A20F4DF01F1515C00037EB24 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		9C0B988B1F127F6C00375C08 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9C0B988C1F127F9A00375C08 /* Challenge.swift */,
+				9C0B988C1F127F9A00375C08 /* FirebaseLib.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -426,7 +426,7 @@
 				A257120A1F0ECA520001376E /* ProfileViewController.swift in Sources */,
 				A20F4E031F1517DB0037EB24 /* TabBarViewController.swift in Sources */,
 				A20F4DF41F1515C00037EB24 /* LoginScreenViewController.swift in Sources */,
-				9C0B988D1F127F9A00375C08 /* Challenge.swift in Sources */,
+				9C0B988D1F127F9A00375C08 /* FirebaseLib.swift in Sources */,
 				A257120E1F0ECA840001376E /* PublicBattleViewController.swift in Sources */,
 				A257120C1F0ECA6E0001376E /* JudgeViewController.swift in Sources */,
 				A25712081F0ECA3E0001376E /* BattlesViewController.swift in Sources */,
