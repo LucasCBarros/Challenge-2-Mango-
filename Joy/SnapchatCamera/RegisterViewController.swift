@@ -135,7 +135,7 @@ class RegisterViewController: LoginViewController, UIImagePickerControllerDelega
 
 
     // clicked sign up
-    @IBAction func signUpBtn_click(_ sender: AnyObject) {
+    @IBAction func signUpBtn_click(_ sender: AnyObject) {cd
         print("sign up pressed")
 
         // dismiss keyboard

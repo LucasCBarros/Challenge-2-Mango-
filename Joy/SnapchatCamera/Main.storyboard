@@ -152,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HnA-P1-G5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3788" y="1513"/>
+            <point key="canvasLocation" x="3788" y="1728"/>
         </scene>
         <!--Build Battle View Controller-->
         <scene sceneID="y2L-qJ-dW9">
@@ -170,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vql-jE-Rrz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3788" y="2197"/>
+            <point key="canvasLocation" x="3788" y="2484"/>
         </scene>
         <!--Judge View Controller-->
         <scene sceneID="3lT-mM-0vp">
@@ -217,8 +217,8 @@
                                     <constraint firstAttribute="height" constant="401" id="L5J-dk-FQr"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qN7-2m-lfi">
-                                <rect key="frame" x="91" y="80" width="192" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qN7-2m-lfi">
+                                <rect key="frame" x="121" y="80" width="192" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="192" id="4be-f9-2Jk"/>
@@ -364,7 +364,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="oBl-RW-y2x" kind="show" id="Jhi-cx-GW3"/>
+                        <segue destination="oBl-RW-y2x" kind="relationship" relationship="rootViewController" id="uhr-EV-9JN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1K-YM-TBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -383,8 +383,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVq-10-RRe">
-                                <rect key="frame" x="57" y="101" width="55" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WVq-10-RRe">
+                                <rect key="frame" x="160" y="71" width="55" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
@@ -443,6 +443,7 @@
                     <tabBarItem key="tabBarItem" title="" image="profile" selectedImage="profileSelected" id="Ahi-dk-DOO" userLabel="profileItem">
                         <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" id="k5g-Ef-unN"/>
                     <connections>
                         <outlet property="photoCollection" destination="nqn-Xc-ZGB" id="szV-6e-ytE"/>
                     </connections>
