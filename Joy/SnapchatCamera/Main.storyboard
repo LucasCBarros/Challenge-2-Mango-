@@ -446,6 +446,7 @@
                     <navigationItem key="navigationItem" id="k5g-Ef-unN"/>
                     <connections>
                         <outlet property="photoCollection" destination="nqn-Xc-ZGB" id="szV-6e-ytE"/>
+                        <segue destination="aQ3-UP-0Zy" kind="presentation" identifier="ToLoginScreenID" id="CoY-Ly-in0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJI-8m-w83" userLabel="First Responder" sceneMemberID="firstResponder"/>
