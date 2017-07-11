@@ -13,7 +13,10 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     @IBOutlet var cameraView: UIView!
     @IBOutlet var pickedImage: UIImageView!
-
+    
+    @IBOutlet var DiscardButton: UIButton!
+    @IBOutlet var UseButton: UIButton!
+    
     var captureSession = AVCaptureSession()
     var captureDevice: AVCaptureDevice?
     var previewLayer : AVCaptureVideoPreviewLayer?
@@ -23,6 +26,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DiscardButton.isHidden = true
+        UseButton.isHidden = true
+        
         captureSession.sessionPreset = AVCaptureSessionPresetPhoto
         frontCamera(frontCamera)
         if captureDevice != nil { beginSession() }
@@ -107,19 +113,37 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             stillImageOutput.captureStillImageAsynchronously(from: videoConnection, completionHandler: { (imageDataSampleBuffer, error) in
                     let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
                     let image = UIImage(data: imageData!)
-                    Challenge.storePhoto(photoData: imageData!)
+                    //Challenge.storePhoto(photoData: imageData!)
                 
                     print("image taked: \(image)")
-                    self.pickedImage.image = image!
-                    //self.cameraView.addSubview(self.pickedImage)
+                    self.pickedImage.image = image
                     self.pickedImage.isHidden = false
+                
+                    self.flashButton.isHidden = true
+                    self.cameraButton.isHidden = true
+                    self.flashButton.isEnabled = false
+                    self.cameraButton.isEnabled = false
+                
+                    self.DiscardButton.isHidden = false
+                    self.UseButton.isHidden = false
+                    self.DiscardButton.isEnabled = true
+                    self.UseButton.isEnabled = true
             })
         }
     }
     
     func captureAnotherPicture(){
         if didtakePhoto == true {
+            //self.previewPicture.pickedImage.isHidden = true
             self.pickedImage.isHidden = true
+            
+            self.flashButton.isHidden = false
+            self.cameraButton.isHidden = false
+            self.flashButton.isEnabled = true
+            self.cameraButton.isEnabled = true
+            
+            self.DiscardButton.isHidden = true
+            self.UseButton.isHidden = true
             didtakePhoto = false}
         else {
             captureSession.startRunning()
@@ -130,8 +154,17 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     
     @IBAction func CancelCaptureSession(_ sender: Any) {
-        
         performSegue(withIdentifier: "CancelCaptureSession", sender: AnyObject.self)
+    }
+    
+    
+    @IBAction func DiscardPicture(_ sender: Any) {
+        captureAnotherPicture()
+    }
+    
+    
+    @IBAction func usePicture(_ sender: Any) {
+        
     }
     
 }

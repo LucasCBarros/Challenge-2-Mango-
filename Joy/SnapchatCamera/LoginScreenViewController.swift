@@ -12,45 +12,89 @@ import FirebaseAuth
 class LoginScreenViewController: LoginViewController
 {
     
+    @IBOutlet var logoImg: UIImageView!
+    // textfield
+    @IBOutlet weak var usernameTxt: UITextField!
+    @IBOutlet weak var passwordTxt: UITextField!
     
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    // buttons
+    @IBOutlet weak var signInBtn: UIButton!
+    @IBOutlet weak var signUpBtn: UIButton!
+
     
     
-    override func viewDidLoad()
-    {
+    // default func
+    override func viewDidLoad() {
         super.viewDidLoad()
         
-        //set delegate to textfile
-        self.emailTextField.delegate = self
-        self.passwordTextField.delegate = self
+
         
+//        // alignment
+//        logoImg.frame = CGRect(x: 10, y: 80, width: self.view.frame.size.width - 20, height: 50)
+//        usernameTxt.frame = CGRect(x: 10, y: logoImg.frame.origin.y + 70, width: self.view.frame.size.width - 20, height: 30)
+//        passwordTxt.frame = CGRect(x: 10, y: usernameTxt.frame.origin.y + 40, width: self.view.frame.size.width - 20, height: 30)
+//        signInBtn.frame = CGRect(x: 20, y:  passwordTxt.frame.origin.y + 70, width: self.view.frame.size.width / 4, height: 30)
+//        signInBtn.layer.cornerRadius = signInBtn.frame.size.width / 20
+//        
+//        signUpBtn.frame = CGRect(x: self.view.frame.size.width - self.view.frame.size.width / 4 - 20, y: signInBtn.frame.origin.y, width: self.view.frame.size.width / 4, height: 30)
+//        signUpBtn.layer.cornerRadius = signUpBtn.frame.size.width / 20
+        
+        // tap to hide keyboard
+        let hideTap = UITapGestureRecognizer(target: self, action: #selector(LoginScreenViewController.hideKeyboard(_:)))
+        hideTap.numberOfTapsRequired = 1
+        self.view.isUserInteractionEnabled = true
+        self.view.addGestureRecognizer(hideTap)
+        
+        // background
+        let bg = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+        bg.image = UIImage(named: "background.jpg")
+        bg.layer.zPosition = -1
+        self.view.addSubview(bg)
     }
     
-    @IBAction func logInButton(_ sender: Any)
-    {
-        let email = self.emailTextField.text!
-        let password = self.passwordTextField.text!
-        // Fazer funcao que valida valores e retorna string
+    
+    // hide keyboard func
+    func hideKeyboard(_ recognizer : UITapGestureRecognizer) {
+        self.view.endEditing(true)
+    }
+    
+    
+    // clicked sign in button
+    @IBAction func signInBtn_click(_ sender: AnyObject) {
+        print("sign in pressed")
         
+        // hide keyboard
+        self.view.endEditing(true)
+        
+        // if textfields are empty
+        if usernameTxt.text!.isEmpty || passwordTxt.text!.isEmpty {
+            
+            // show alert message
+            let alert = UIAlertController(title: "Please", message: "fill in fields", preferredStyle: UIAlertControllerStyle.alert)
+            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        // login functions
+        let email = self.usernameTxt.text!
+        let password = self.passwordTxt.text!
         
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let usr = user
             {
                 self.loginHandler(identifier: "LoginScreenToMainID")
-            }
-            else
-            {
-                print("erro no login sem registro")
+                
+            } else {
+                
+                // show alert message
+                let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+                alert.addAction(ok)
+                self.present(alert, animated: true, completion: nil)
             }
         }
+        
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
-    {
-        self.emailTextField.resignFirstResponder()
-        self.passwordTextField.resignFirstResponder()
-    }
-    
         
 }
