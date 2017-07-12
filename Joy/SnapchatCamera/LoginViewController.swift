@@ -10,14 +10,18 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate
 {
-    func loginHandler(identifier: String)
+    func loginHandler(username: String?, identifier: String)
     {
-        let defautls = UserDefaults.standard
+        if let user = username
+        {
+            let defautls = UserDefaults.standard
+            defautls.set(user, forKey: "username")
+            print("Realizou login")
+        }
         
-        defautls.set("logged", forKey: "login")
-        print("Realizou login")
         
         self.performSegue(withIdentifier: identifier, sender: self)
+        print("Realizou Login (LoginViewController)")
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool

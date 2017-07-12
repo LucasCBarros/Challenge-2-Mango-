@@ -69,10 +69,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let defaults = UserDefaults.standard
 
         // Checks whether the default exists
-        if let status = defaults.string(forKey: "login")
+        if let status = defaults.string(forKey: "username")
         {
             // Make sure that it is logged in
-            if status == "logged"
+            if status != ""
             {
                 logged = true
             }
@@ -80,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         else
         {
-            defaults.set("login", forKey: "not logged")
+            defaults.set("", forKey: "username")
         }
         
         return logged

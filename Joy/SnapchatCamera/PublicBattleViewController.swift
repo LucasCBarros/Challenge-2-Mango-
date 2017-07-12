@@ -17,11 +17,13 @@ class PublicBattlesViewController: UIViewController
     
     @IBAction func loadImage(_ sender: Any)
     {
-        self.activityIndicator.startAnimating()
+//        self.activityIndicator.startAnimating()
+//        
+//        FirebaseLib.downloadImage(reference: "userImages/marcelove123/image2.jpg") { (image) in
+//            self.image.image = image
+//            self.activityIndicator.stopAnimating()
         
-        FirebaseLib.downloadImage(reference: "userImages/marcelove123/image2.jpg") { (image) in
-            self.image.image = image
-            self.activityIndicator.stopAnimating()
-        }
+//        }
+        FirebaseLib.getUserData(user: "c")
     }
 }

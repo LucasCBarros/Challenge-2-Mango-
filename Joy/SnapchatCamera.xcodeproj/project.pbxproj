@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		34AE11F1E6995DD1880E335D /* Pods_SnapchatCameraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5887918661A0D60E0A77C4D /* Pods_SnapchatCameraTests.framework */; };
 		52F0EA7D4DAAF6E8A144095B /* Pods_SnapchatCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BAFC7BC5267EC3B3640754 /* Pods_SnapchatCamera.framework */; };
+		9C0371B71F15736900E57048 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0371B61F15736900E57048 /* UserData.swift */; };
+		9C0371B91F164A2E00E57048 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0371B81F164A2E00E57048 /* Log.swift */; };
 		9C0B988D1F127F9A00375C08 /* FirebaseLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0B988C1F127F9A00375C08 /* FirebaseLib.swift */; };
 		9C5218F21F0C249A00D2D201 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C5218F11F0C249A00D2D201 /* GoogleService-Info.plist */; };
 		A20F4DF31F1515C00037EB24 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A20F4DEF1F1515C00037EB24 /* LoginScreen.storyboard */; };
@@ -47,6 +49,8 @@
 /* Begin PBXFileReference section */
 		4E3AC7818B4C18573DD65E8A /* Pods-SnapchatCamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapchatCamera.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnapchatCamera/Pods-SnapchatCamera.release.xcconfig"; sourceTree = "<group>"; };
 		97BAFC7BC5267EC3B3640754 /* Pods_SnapchatCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapchatCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C0371B61F15736900E57048 /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		9C0371B81F164A2E00E57048 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		9C0B988C1F127F9A00375C08 /* FirebaseLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseLib.swift; sourceTree = "<group>"; };
 		9C5218F11F0C249A00D2D201 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A20F4DEF1F1515C00037EB24 /* LoginScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
@@ -110,10 +114,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9C0371B51F15528600E57048 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		9C0B988B1F127F6C00375C08 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				9C0B988C1F127F9A00375C08 /* FirebaseLib.swift */,
+				9C0371B61F15736900E57048 /* UserData.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -146,6 +158,7 @@
 				A20F4DF01F1515C00037EB24 /* LoginScreenViewController.swift */,
 				A20F4DF11F1515C00037EB24 /* RegisterViewController.swift */,
 				A20F4DF21F1515C00037EB24 /* LoginViewController.swift */,
+				9C0371B81F164A2E00E57048 /* Log.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -174,6 +187,7 @@
 			children = (
 				AC94AD601B8E40BF002D9AD2 /* AppDelegate.swift */,
 				9C0B988B1F127F6C00375C08 /* Model */,
+				9C0371B51F15528600E57048 /* Controller */,
 				9C5523FB1F057F4D00EB312C /* View */,
 				AC94AD5E1B8E40BF002D9AD2 /* Supporting Files */,
 			);
@@ -256,7 +270,7 @@
 				TargetAttributes = {
 					AC94AD5A1B8E40BF002D9AD2 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = KYTAYKS6H2;
+						DevelopmentTeam = J5KQYDNX5E;
 						LastSwiftMigration = 0830;
 					};
 					AC94AD6F1B8E40BF002D9AD2 = {
@@ -409,6 +423,7 @@
 			files = (
 				A20F4E001F1517C30037EB24 /* CameraViewController.swift in Sources */,
 				A22030BE1F154A080071E708 /* ProfileImage.swift in Sources */,
+				9C0371B91F164A2E00E57048 /* Log.swift in Sources */,
 				A20F4E041F1517DB0037EB24 /* NavigationViewController.swift in Sources */,
 				A25712101F0F1D290001376E /* SegueToCameraView.swift in Sources */,
 				A20F4DF51F1515C00037EB24 /* RegisterViewController.swift in Sources */,
@@ -420,6 +435,7 @@
 				A22030BD1F154A080071E708 /* CustomImageFlowLayout.swift in Sources */,
 				A25712081F0ECA3E0001376E /* BattlesViewController.swift in Sources */,
 				A22030BC1F154A080071E708 /* ImageCollectionViewCell.swift in Sources */,
+				9C0371B71F15736900E57048 /* UserData.swift in Sources */,
 				A22030B81F1549760071E708 /* ProfileViewController.swift in Sources */,
 				AC94AD611B8E40BF002D9AD2 /* AppDelegate.swift in Sources */,
 				A20F4DF61F1515C00037EB24 /* LoginViewController.swift in Sources */,
@@ -549,7 +565,7 @@
 			baseConfigurationReference = E999D9EA3C71D2FABB11C6A4 /* Pods-SnapchatCamera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KYTAYKS6H2;
+				DEVELOPMENT_TEAM = J5KQYDNX5E;
 				INFOPLIST_FILE = SnapchatCamera/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -564,7 +580,7 @@
 			baseConfigurationReference = 4E3AC7818B4C18573DD65E8A /* Pods-SnapchatCamera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KYTAYKS6H2;
+				DEVELOPMENT_TEAM = J5KQYDNX5E;
 				INFOPLIST_FILE = SnapchatCamera/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

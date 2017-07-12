@@ -14,6 +14,7 @@ class RegisterViewController: LoginViewController, UIImagePickerControllerDelega
 
     // profile image
     @IBOutlet weak var avaImg: UIImageView!
+    var profilePhotoData: Data?
 
     // textfields
     @IBOutlet weak var usernameTxt: UITextField!
@@ -100,6 +101,13 @@ class RegisterViewController: LoginViewController, UIImagePickerControllerDelega
     // connect selected image to our ImageView
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         avaImg.image = info[UIImagePickerControllerEditedImage] as? UIImage
+        
+        // Save the image to store it in Firebase
+        if let photo = avaImg.image
+        {
+            self.profilePhotoData = UIImagePNGRepresentation(photo)
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -149,7 +157,7 @@ class RegisterViewController: LoginViewController, UIImagePickerControllerDelega
             let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
             alert.addAction(ok)
             self.present(alert, animated: true, completion: nil)
-
+            print("field is empty")
             return
         }
 
@@ -170,6 +178,12 @@ class RegisterViewController: LoginViewController, UIImagePickerControllerDelega
         let email = self.emailTxt.text!
         let password = self.passwordTxt.text!
         let username = self.usernameTxt.text!
+        
+        if (profilePhotoData != nil)
+        {
+            
+            FirebaseLib.editProfilePhoto(user: username, photoData: self.profilePhotoData!)
+        }
 
         
         FirebaseLib.userRegister(account: email, password: password, username: username, name: "marcelo", age: "22" )
@@ -177,12 +191,10 @@ class RegisterViewController: LoginViewController, UIImagePickerControllerDelega
             
             if error == nil
             {
-                self.loginHandler(identifier: "RegisterToMainID")
-                print("nao deu erro loser")
+                self.loginHandler(username: username, identifier: "RegisterToMainID")
             }
             else
             {
-                print("deu erro isso campeao")
                 // show alert message
                 let alert = UIAlertController(title: "Error", message: error, preferredStyle: UIAlertControllerStyle.alert)
                 let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)

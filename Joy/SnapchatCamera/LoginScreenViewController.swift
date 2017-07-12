@@ -83,7 +83,8 @@ class LoginScreenViewController: LoginViewController
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let usr = user
             {
-                self.loginHandler(identifier: "LoginScreenToMainID")
+                let username = FirebaseLib.getUserFromEmail(email: email)
+                self.loginHandler(username: username, identifier: "LoginScreenToMainID")
                 
             } else {
                 

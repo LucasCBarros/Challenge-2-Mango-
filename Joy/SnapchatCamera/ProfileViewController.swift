@@ -14,6 +14,7 @@ import Firebase
 class ProfileViewController: UIViewController, UICollectionViewDataSource
 {
     
+    @IBOutlet weak var username: UILabel!
     @IBOutlet weak var photoCollection: UICollectionView!
     
     var images = [UIImage]() //////
@@ -21,40 +22,31 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource
 //    var images = [ProfileImages]()
     var customImageFlowLayout: CustomImageFlowLayout!
     
-//    var dbRef: FIRDatabaseReference!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        dbRef = FIRdatabase.database().refence().child("images")
-        
+        if let user = Log.getUser()
+        {
+            self.username.text = user
+        }
         loadImages()
         customImageFlowLayout = CustomImageFlowLayout()
         photoCollection.collectionViewLayout = customImageFlowLayout
         photoCollection.backgroundColor = .white
     }
     
-    func loadImages(){
-
-//        dbRef.observe(FIRDataEventType.value, width: { (snapshot) in
-//            var newImages =  [ProfileImages]()
-//            
-//           for profileImagesSnapshot in snapshot.children {
-//                let profileImagesObject = ProfileImages(snapshot: profileImagesSnapshot as! FIRDataSnapshot)
-//            newImages.append(profileImagesObject)
-//            }
-//            self.images = newImages
-//            self.photoCollection.reloadData()
-//        })
-        
-        images.append(UIImage(named: "image1")!)
-        images.append(UIImage(named: "image1")!)
-        images.append(UIImage(named: "image1")!)
-        images.append(UIImage(named: "image1")!)
-        images.append(UIImage(named: "image1")!)
-        self.photoCollection.reloadData()
-        
+    func loadImages()
+    {
+        print("load imagens")
+        if let user = Log.getUser()
+        {
+            print("achou user")
+            FirebaseLib.getProfilePhoto(user: user)
+            { (photo) in
+                self.images.append(photo)
+            }
+            self.photoCollection.reloadData()
+        }
     }
     
     @IBAction func reloadAction(_ sender: Any) {
@@ -65,7 +57,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource
     {
         let defautls = UserDefaults.standard
         
-        defautls.set("not logged", forKey: "login")
+        defautls.set("", forKey: "username")
         print("realizou log Out")
         // voltar pra tela de login
         self.performSegue(withIdentifier: "ToLoginScreenID", sender: self)

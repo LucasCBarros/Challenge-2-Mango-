@@ -13,42 +13,52 @@ import FirebaseAuth
 
 class FirebaseLib
 {
+    static func editProfilePhoto(user: String, photoData: Data)
+    {
+        var path = "userPhotos/" + user + "/profilePhoto.jpg"
+        self.storePhoto(reference: path, photoData: photoData)
+        
+    }
+    static func getProfilePhoto(user: String, completionHandler: @escaping (UIImage) -> Void)
+    {
+        let path = "userPhotos/" + user + "/profilePhoto.jpg"
+        
+        self.downloadImage(reference: path)
+        {
+            (profilePhoto) in
+            
+            DispatchQueue.main.async
+            {
+                completionHandler(profilePhoto)
+            }
+        }
+        
+    }
     static func storePhoto(reference: String, photoData: Data)
     {
-//        // Reference for database
-//        var databaseRef: DatabaseReference!
-//        databaseRef = Database.database().reference()
-//        
-//        // Get a reference to the storage service using the default Firebase App
-//        let storage = Storage.storage()
-//        
-//        // Create a storage reference from our storage service
-//        let storageRef = storage.reference()
-//        
-//        
-//        
-//        let userImages = storageRef.child("userImages")
-//        let user = "marcelove123/"
-//        let imageName = "image" + "\(photoNum)" + ".jpg"
-//        //photoNum += 1
-//        
-//        
-//        let imageRef = userImages.child(user + imageName)
-//        
-//        print("vai tentar subir")
-//        // Upload the file to the path
-//        let uploadTask = imageRef.putData(photoData, metadata: nil)
-//        { (metadata, error) in
-//            guard let metadata = metadata else
-//            {
-//                print("Erro")
-//                // Uh-oh, an error occurred!
-//                return
-//            }
-//            // Metadata contains file metadata such as size, content-type, and download URL.
-//            let downloadURL = metadata.downloadURL
-//            print(downloadURL)
-//        }
+        // Get a reference to the storage service using the default Firebase App
+        let storage = Storage.storage()
+        
+        // Create a storage reference from our storage service
+        let storageRef = storage.reference()
+        
+        // Create a reference as the path of image tha will be saved
+        let imageRef = storageRef.child(reference)
+        
+        print("vai tentar subir")
+        // Upload the file to the path
+        imageRef.putData(photoData, metadata: nil)
+        { (metadata, error) in
+            guard let metadata = metadata else
+            {
+                print("Erro")
+                // Uh-oh, an error occurred!
+                return
+            }
+            // Metadata contains file metadata such as size, content-type, and download URL.
+            let downloadURL = metadata.downloadURL
+            print(downloadURL)
+        }
     }
     
     static func downloadImage(reference: String, completionHandler: @escaping (UIImage) -> Void)
@@ -67,7 +77,7 @@ class FirebaseLib
         let imageRef = storageRef.child(reference)
     
         // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-        imageRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
+        imageRef.getData(maxSize: 10 * 1024 * 1024) { data, error in
             if error != nil
             {
                 // Uh-oh, an error occurred!
@@ -84,17 +94,57 @@ class FirebaseLib
         }
     
     }
-    static func getData(reference: String) ->String
-    {
-        return " "
-    }
     
-//    static func setData(reference: String, data: String)
-//    {
-//        var ref: DatabaseReference!
-//        ref = Database.database().reference()
-//           self.ref.child("Usuarios").childByAutoId().setValue(data)
-//    }
+    static func getUserFromEmail(email: String) -> String?
+    {
+        var username: String?
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+//      
+//        ref.child("usernames").observeSingleEvent(of: .value, with: { (snapshot) in
+//            // Get user value
+//            let value = snapshot.value as? NSDictionary
+//            let keys = value?.allKeys as? [String]
+//            
+//            for index in 0..< value
+//            {
+//                username = value?["email"] as? String ?? ""
+//            }
+//            
+//            
+//            })
+        username = " "
+        return username
+    }
+
+    
+    
+    static func getUserData(user: String) ->UserData?
+    {
+        var userData: UserData?
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        
+        
+        print("vai obter dados")
+        ref.child("usersData").child(user).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            
+            let account = value?["account"] as? String ?? ""
+            let name = value?["name"] as? String ?? ""
+            let age = value?["age"] as? String ?? ""
+            let collectionPhotosPath = [String]()
+            
+            
+            
+            userData = UserData(username: user, account: account, name: name, age: age)
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        return userData
+    }
     
     static func userRegister(account: String, password: String, username: String, name: String, age: String,
                              completionHandler: @escaping (String?) -> Void)
@@ -133,31 +183,5 @@ class FirebaseLib
             user.child("name").setValue(name)
             user.child("age").setValue(age)
         }
-    }
-    
-enum UserData
-{
-    case email, name, age
-}
-    static func getUserInfo(userID: String) ->[String]
-    {
-        var userInfo = [String]()
-        
-        var ref: DatabaseReference!
-        ref = Database.database().reference()
-
-        ref.child("userData").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            //let value = snapshot.value as? NSDictionary
-            //let username = value?["userID"] as? String ?? ""
-            //let user = User.init(username: username)
-            
-            //print("value:\(value)")
-          //  print("username:\(username)")
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-        
-        return userInfo
     }
 }
