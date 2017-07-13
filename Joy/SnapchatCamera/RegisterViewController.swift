@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class RegisterViewController: LoginViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
@@ -179,19 +178,13 @@ class RegisterViewController: LoginViewController, UIImagePickerControllerDelega
         let password = self.passwordTxt.text!
         let username = self.usernameTxt.text!
         
-        if (profilePhotoData != nil)
-        {
-            
-            FirebaseLib.editProfilePhoto(user: username, photoData: self.profilePhotoData!)
-        }
-
         
-        FirebaseLib.userRegister(account: email, password: password, username: username, name: "marcelo", age: "22" )
+        FirebaseLib.signUp(account: email, password: password, username: username, name: "marcelo", age: "22", profilePhotoData: self.profilePhotoData)
         { (error) in
             
             if error == nil
             {
-                self.loginHandler(username: username, identifier: "RegisterToMainID")
+                self.loginHandler(segueIdentifier: "RegisterToMainID")
             }
             else
             {

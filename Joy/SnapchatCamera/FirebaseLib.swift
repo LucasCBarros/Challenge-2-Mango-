@@ -34,6 +34,11 @@ class FirebaseLib
         }
         
     }
+    static func addPhoto(user: String)
+    {
+        
+    }
+    
     static func storePhoto(reference: String, photoData: Data)
     {
         // Get a reference to the storage service using the default Firebase App
@@ -95,26 +100,22 @@ class FirebaseLib
     
     }
     
-    static func getUserFromEmail(email: String) -> String?
+    static func getUsernameFromUserID(userID: String, completionHandler: @escaping (String?) -> Void)
     {
         var username: String?
         var ref: DatabaseReference!
         ref = Database.database().reference()
-//      
-//        ref.child("usernames").observeSingleEvent(of: .value, with: { (snapshot) in
-//            // Get user value
-//            let value = snapshot.value as? NSDictionary
-//            let keys = value?.allKeys as? [String]
-//            
-//            for index in 0..< value
-//            {
-//                username = value?["email"] as? String ?? ""
-//            }
-//            
-//            
-//            })
-        username = " "
-        return username
+
+        ref.child("usersTable").child(userID).observeSingleEvent(of: .value, with:
+            { (snapshot) in
+                let value = snapshot.value as? String
+                
+                DispatchQueue.main.async
+                    {
+                        let username = value
+                        completionHandler(username)
+                }
+        })
     }
 
     
@@ -146,42 +147,116 @@ class FirebaseLib
         return userData
     }
     
-    static func userRegister(account: String, password: String, username: String, name: String, age: String,
-                             completionHandler: @escaping (String?) -> Void)
+    static func createUser(account: String, password: String, completionHandler: @escaping (String?, String) -> Void)
     {
-        // verifica se a conta e o username já não existem!!!!!!!!!!!!!!!!!
-        
         Auth.auth().createUser(withEmail: account, password: password) { (user, error) in
             if user != nil
             {
                 print("register ok")
                 DispatchQueue.main.async
                 {
-                    completionHandler(error?.localizedDescription)
+                    let userID = user!.uid
+                    // Mensagem de erro nil
+                    completionHandler(error?.localizedDescription, userID)
                 }
             }
             else
             {
+                DispatchQueue.main.async
+                {
+                    // Mensagem de erro
+                    completionHandler(error?.localizedDescription, "")
+                }
+                
+                print("Sign up error")
+            }
+        }
+    }
+    
+    static func signUp(account: String, password: String, username: String, name: String, age: String, profilePhotoData: Data?,
+                             completionHandler: @escaping (String?) -> Void)
+    {
+        var error: String?
+        // verifica se a conta e o username já não existem!!!!!!!!!!!!!!!!!
+        
+        self.createUser(account: account, password: password)
+        {(signUpError, userID) in
+            
+            if signUpError == nil
+            {
+                var ref: DatabaseReference!
+                ref = Database.database().reference()
+                
+                
+                let user =  ref.child("usersData").child(username)
+                if user != nil///////////MELHORARAR ISSSOO
+                {
+                    user.child("account").setValue(account)
+                    user.child("name").setValue(name)
+                    user.child("age").setValue(age)
+                }
+                
+                
+                // Set the userID in this device
+                Log.deviceLogIn(userID: userID)
+                
+                let usersTable = ref.child("usersTable")
+
+                if usersTable != nil
+                {
+                    usersTable.child(userID).setValue(username)
+                }
+                if (profilePhotoData != nil)
+                {
+                    
+                    self.editProfilePhoto(user: username, photoData: profilePhotoData!)
+                }
                 
                 DispatchQueue.main.async
                     {
-                        completionHandler(error?.localizedDescription)
+                        // Error message
+                        completionHandler(error)
                 }
-                
-                print("Register error")
-            }
-        }
-        
-        var ref: DatabaseReference!
-        ref = Database.database().reference()
-    
 
-        let user =  ref.child("usersData").child(username)
-        if user != nil
-        {
-            user.child("account").setValue(account)
-            user.child("name").setValue(name)
-            user.child("age").setValue(age)
+            }
+            // Error in in createUser function
+            else
+            {
+                DispatchQueue.main.async
+                    {
+                        // Mensagem de erro
+                        completionHandler(signUpError)
+                }
+            }
+            
+            
+            
+        }
+    }
+    
+    static func signIn(account: String, password: String, completionHandler: @escaping (String?)->Void)
+    {
+        Auth.auth().signIn(withEmail: account, password: password)
+        { (user, error) in
+            // LogIn ok
+            if user != nil
+            {
+                DispatchQueue.main.async
+                    {
+                        Log.deviceLogIn(userID: user!.uid)
+                        completionHandler(nil)
+                }
+
+            }
+                
+            else if error != nil
+            {
+                DispatchQueue.main.async
+                    {
+                        
+                        completionHandler(error!.localizedDescription)
+                }
+            }
         }
     }
 }

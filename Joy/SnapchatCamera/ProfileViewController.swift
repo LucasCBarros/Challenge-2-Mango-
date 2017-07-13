@@ -6,16 +6,16 @@
 //  Copyright © 2017 Archetapp. All rights reserved.
 //
 
-import Foundation
 import UIKit
-import FirebaseDatabase
-import Firebase
 
 class ProfileViewController: UIViewController, UICollectionViewDataSource
 {
     
-    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var profilePhotoView: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var photoCollection: UICollectionView!
+    var username: String?
     
     var images = [UIImage]() //////
     
@@ -25,11 +25,15 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let user = Log.getUser()
-        {
-            self.username.text = user
-        }
-        loadImages()
+        self.setProfilePhoto()
+        
+//        if let userID = Log.getUserID()
+//        {
+//            //self.username = FirebaseLib.getUsernameFromUserID(userID: userID, completionHandler: (String) -> Void)
+////            usernameLabel.text = self.username
+//        }
+//        
+//        loadImages()
         customImageFlowLayout = CustomImageFlowLayout()
         photoCollection.collectionViewLayout = customImageFlowLayout
         photoCollection.backgroundColor = .white
@@ -38,36 +42,55 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource
     func loadImages()
     {
         print("load imagens")
-        if let user = Log.getUser()
-        {
-            print("achou user")
-            FirebaseLib.getProfilePhoto(user: user)
-            { (photo) in
-                self.images.append(photo)
-            }
+//        if let user = Log.getUser()
+//        {
+//            print("achou user")
+//            FirebaseLib.getProfilePhoto(user: user)
+//            { (photo) in
+//                self.images.append(photo)
+//            }
             self.photoCollection.reloadData()
-        }
+//        }
     }
-    
+    func setProfilePhoto()
+    {
+        // Configuration of UImageView
+        self.profilePhotoView.layer.cornerRadius = self.profilePhotoView.frame.size.width / 2
+        self.profilePhotoView.layer.masksToBounds = true
+        
+        self.activityIndicator.startAnimating()
+        
+        let userID = Log.getUserID()
+        FirebaseLib.getUsernameFromUserID(userID: userID!, completionHandler:
+            { (username) in
+                
+                if username != nil
+                {
+                    FirebaseLib.getProfilePhoto(user: username!, completionHandler:
+                        { (photo) in
+                            self.profilePhotoView.image = photo
+                            self.activityIndicator.stopAnimating()
+                    })
+                }
+        })
+    }
     @IBAction func reloadAction(_ sender: Any) {
         loadImages()
     }
     
     @IBAction func logOutAction(_ sender: Any)
     {
-        let defautls = UserDefaults.standard
-        
-        defautls.set("", forKey: "username")
+        Log.logOut()
         print("realizou log Out")
         // voltar pra tela de login
         self.performSegue(withIdentifier: "ToLoginScreenID", sender: self)
 
     }
-    
+//
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
-    
+//
     func collectionView(_ imageCollection: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = imageCollection.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell

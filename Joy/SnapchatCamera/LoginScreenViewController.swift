@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class LoginScreenViewController: LoginViewController
 {
@@ -80,22 +79,22 @@ class LoginScreenViewController: LoginViewController
         let email = self.usernameTxt.text!
         let password = self.passwordTxt.text!
         
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            if let usr = user
+        FirebaseLib.signIn(account: email, password: password)
+        { (errorDescription) in
+            
+            if errorDescription == nil
             {
-                let username = FirebaseLib.getUserFromEmail(email: email)
-                self.loginHandler(username: username, identifier: "LoginScreenToMainID")
-                
-            } else {
-                
+                self.loginHandler(segueIdentifier: "LoginScreenToMainID")
+            }
+            else
+            {
                 // show alert message
-                let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Error", message: errorDescription!, preferredStyle: UIAlertControllerStyle.alert)
                 let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
                 alert.addAction(ok)
                 self.present(alert, animated: true, completion: nil)
             }
         }
-        
     }
         
 }
