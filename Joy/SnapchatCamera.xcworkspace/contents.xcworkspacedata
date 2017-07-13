@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/mark3/Documents/BEPiD/Changelle/Challenge2/Challenge-2-Mango-/Joy/BattleFace.xcodeproj">
+      location = "group:BattleFace.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
