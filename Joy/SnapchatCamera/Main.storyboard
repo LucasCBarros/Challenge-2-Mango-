@@ -33,7 +33,7 @@
         <!--Segue To Camera View-->
         <scene sceneID="HYI-b7-IRQ">
             <objects>
-                <viewController id="Zfj-qo-huV" customClass="SegueToCameraView" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Zfj-qo-huV" customClass="SegueToCameraView" customModule="BattleFace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wnh-T4-1hO"/>
                         <viewControllerLayoutGuide type="bottom" id="ZJN-vw-RpT"/>
@@ -55,7 +55,7 @@
         <!--Camera View Controller-->
         <scene sceneID="fLy-yM-Xof">
             <objects>
-                <viewController id="Gc3-ck-ll3" customClass="CameraViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Gc3-ck-ll3" customClass="CameraViewController" customModule="BattleFace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IHk-pf-fhV"/>
                         <viewControllerLayoutGuide type="bottom" id="2DG-EY-f7p"/>
@@ -148,30 +148,12 @@
                         <outlet property="flashButton" destination="1hf-SQ-Rl7" id="pf4-r7-PT1"/>
                         <outlet property="pickedImage" destination="rF2-bB-CuG" id="ygw-rb-THr"/>
                         <segue destination="fwY-Gt-5pD" kind="show" identifier="CancelCaptureSession" id="aff-Dx-Ecq"/>
-                        <segue destination="eV4-cf-Pcd" kind="presentation" id="Auf-eJ-tl9"/>
+                        <segue destination="akW-MO-Rze" kind="presentation" id="qDG-hY-jpg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HnA-P1-G5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3788" y="1728"/>
-        </scene>
-        <!--Build Battle View Controller-->
-        <scene sceneID="y2L-qJ-dW9">
-            <objects>
-                <viewController id="eV4-cf-Pcd" customClass="BuildBattleViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xLM-ya-CUs"/>
-                        <viewControllerLayoutGuide type="bottom" id="1fU-kL-w2s"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="f0P-bm-EnC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vql-jE-Rrz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3788" y="2484"/>
+            <point key="canvasLocation" x="3788" y="1485"/>
         </scene>
         <!--Judge View Controller-->
         <scene sceneID="3lT-mM-0vp">
@@ -190,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYK-UN-UD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5479" y="2197"/>
+            <point key="canvasLocation" x="5479" y="2222"/>
         </scene>
         <!--LoginScreenID-->
         <scene sceneID="gbF-3j-ZzP">
@@ -198,12 +180,12 @@
                 <viewControllerPlaceholder storyboardName="LoginScreen" referencedIdentifier="LoginScreenID" id="aQ3-UP-0Zy" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cjg-Tr-T7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7845" y="2197"/>
+            <point key="canvasLocation" x="7532" y="2221"/>
         </scene>
         <!--Public Battles View Controller-->
         <scene sceneID="Xhr-Y8-ENy">
             <objects>
-                <viewController id="VPT-yU-XXG" customClass="PublicBattlesViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VPT-yU-XXG" customClass="PublicBattlesViewController" customModule="BattleFace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ewu-Ur-nsc"/>
                         <viewControllerLayoutGuide type="bottom" id="R3H-AG-ybE"/>
@@ -269,7 +251,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="up4-f9-beD">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarControllerID" automaticallyAdjustsScrollViewInsets="NO" id="fwY-Gt-5pD" customClass="TabBarViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarControllerID" automaticallyAdjustsScrollViewInsets="NO" id="fwY-Gt-5pD" customClass="TabBarViewController" customModule="BattleFace" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="UBS-ga-QEh">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -286,17 +268,17 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ce-Iw-1xk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2097" y="699"/>
+            <point key="canvasLocation" x="2097" y="272"/>
         </scene>
         <!--feed-->
         <scene sceneID="GCG-wf-ii7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V2U-QZ-xpm" customClass="NavigationViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V2U-QZ-xpm" customClass="NavigationViewController" customModule="BattleFace" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="feed" image="battles" selectedImage="battlesSelected" id="Uge-CD-B5e" userLabel="battlesItem">
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4Gb-2M-WL4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Gb-2M-WL4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -312,12 +294,12 @@
         <!--users-->
         <scene sceneID="gne-gy-Fkf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0ai-Eh-EoK" customClass="NavigationViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0ai-Eh-EoK" customClass="NavigationViewController" customModule="BattleFace" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="users" image="world" selectedImage="worldSelected" id="mls-Yx-Xh7" userLabel="publicItem">
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="lHc-Qw-Lxq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lHc-Qw-Lxq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -333,12 +315,12 @@
         <!--camera-->
         <scene sceneID="jf8-Tr-fdO">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q9H-Ni-G7z" customClass="NavigationViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q9H-Ni-G7z" customClass="NavigationViewController" customModule="BattleFace" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="camera" image="Camera" selectedImage="CameraSelected" id="vib-8D-Ghr">
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="phB-ra-Bnu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="phB-ra-Bnu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -354,12 +336,12 @@
         <!--notifications-->
         <scene sceneID="f4J-Y6-jKo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rgr-6W-7Hh" customClass="NavigationViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rgr-6W-7Hh" customClass="NavigationViewController" customModule="BattleFace" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="notifications" image="gavel" selectedImage="gavelSelected" id="T64-IV-nMs" userLabel="judgeItem">
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="MCX-MY-goh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MCX-MY-goh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -375,12 +357,12 @@
         <!--home-->
         <scene sceneID="JAT-rx-jBU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dxp-Os-I2A" customClass="NavigationViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dxp-Os-I2A" customClass="NavigationViewController" customModule="BattleFace" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="home" image="profile" selectedImage="profileSelected" id="eZY-JT-4hA" userLabel="profileItem">
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3yR-bI-aoU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3yR-bI-aoU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -391,12 +373,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I1K-YM-TBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7165.6000000000004" y="1459.52023988006"/>
+            <point key="canvasLocation" x="6852" y="1460"/>
         </scene>
         <!--username-->
         <scene sceneID="Arm-hd-Mby">
             <objects>
-                <viewController id="oBl-RW-y2x" customClass="ProfileViewController" customModule="SnapchatCamera" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oBl-RW-y2x" customClass="ProfileViewController" customModule="BattleFace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8nZ-7e-ev2"/>
                         <viewControllerLayoutGuide type="bottom" id="Ng5-f4-axz"/>
@@ -427,7 +409,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="lJe-II-9XR" customClass="ImageCollectionViewCell" customModule="SnapchatCamera" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="lJe-II-9XR" customClass="ImageCollectionViewCell" customModule="BattleFace" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="126" height="107"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -517,7 +499,301 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJI-8m-w83" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7165.6000000000004" y="2196.2518740629689"/>
+            <point key="canvasLocation" x="6852" y="2221"/>
+        </scene>
+        <!--Photo Destination-->
+        <scene sceneID="jCF-TL-gem">
+            <objects>
+                <viewController title="Photo Destination" id="akW-MO-Rze" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jZ9-ky-ZZf"/>
+                        <viewControllerLayoutGuide type="bottom" id="yjt-rq-SLE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uYn-b4-JcT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pbg" translatesAutoresizingMaskIntoConstraints="NO" id="gfa-6e-k0V">
+                                <rect key="frame" x="16" y="28" width="343" height="475"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggh-Uh-lrx">
+                                <rect key="frame" x="16" y="547" width="343" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.019374470531021259" green="0.36815341769439491" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTP-ap-G3V">
+                                <rect key="frame" x="16" y="592" width="343" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.67060597182122983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Battle">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="MWK-Z0-7ZB" kind="presentation" id="UlD-R4-klW"/>
+                        <segue destination="dxp-Os-I2A" kind="presentation" id="1ic-vt-yNv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FaJ-lM-wvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3788" y="2482.3088455772117"/>
+        </scene>
+        <!--Invite to Battle-->
+        <scene sceneID="YA0-QD-VUn">
+            <objects>
+                <viewController id="MWK-Z0-7ZB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9iY-Wo-md5"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mv5-24-y3J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Oo9-tk-vSu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plus-circle-outline" translatesAutoresizingMaskIntoConstraints="NO" id="wMl-KQ-ZQQ">
+                                <rect key="frame" x="16" y="526" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Judge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHH-gD-069">
+                                <rect key="frame" x="94" y="546" width="64" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plus-circle-outline" translatesAutoresizingMaskIntoConstraints="NO" id="jEd-gF-krR">
+                                <rect key="frame" x="232" y="526" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdX-di-hZO">
+                                <rect key="frame" x="310" y="546" width="64" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLN-xG-Swv">
+                                <rect key="frame" x="235" y="593" width="67" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Username">
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6s-fL-wzL">
+                                <rect key="frame" x="0.0" y="630" width="187" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNB-rl-dN1">
+                                <rect key="frame" x="187" y="630" width="188" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99895685911178589" green="0.0" blue="0.67013174295425415" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wa-0O-aYP">
+                                <rect key="frame" x="19" y="593" width="67" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Username">
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pbg" translatesAutoresizingMaskIntoConstraints="NO" id="AX6-Dz-th5">
+                                <rect key="frame" x="16" y="28" width="343" height="475"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Invite to Battle" id="BPd-zE-O1h"/>
+                    <connections>
+                        <outlet property="guestAva" destination="jEd-gF-krR" id="yYI-Uu-RdR"/>
+                        <outlet property="guestUsernameButton" destination="fLN-xG-Swv" id="aNk-bJ-sE7"/>
+                        <outlet property="hostPic" destination="AX6-Dz-th5" id="rWH-4B-RvC"/>
+                        <outlet property="judgeAva" destination="wMl-KQ-ZQQ" id="jXa-2g-afd"/>
+                        <outlet property="judgeUsernameButton" destination="1Wa-0O-aYP" id="meC-s3-22G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YEw-7Y-7b9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3788" y="3273"/>
+        </scene>
+        <!--Judge Battle-->
+        <scene sceneID="CUw-h7-p55">
+            <objects>
+                <viewController title="Judge Battle" id="8xN-Ui-PCl" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rkE-kW-vpU"/>
+                        <viewControllerLayoutGuide type="bottom" id="BT7-Lu-p49"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NPX-RI-yPc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pbg" translatesAutoresizingMaskIntoConstraints="NO" id="SR1-28-ims">
+                                <rect key="frame" x="6" y="224" width="180" height="320.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pbg" translatesAutoresizingMaskIntoConstraints="NO" id="WyJ-kB-zjo">
+                                <rect key="frame" x="188" y="224" width="180" height="320.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pp" translatesAutoresizingMaskIntoConstraints="NO" id="cUd-UI-2JM">
+                                <rect key="frame" x="188" y="146" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jy8-cY-e7f">
+                                <rect key="frame" x="266" y="146" width="38.5" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pp" translatesAutoresizingMaskIntoConstraints="NO" id="ayt-g1-dzW">
+                                <rect key="frame" x="6" y="146" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Host" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7go-nG-neT">
+                                <rect key="frame" x="84" y="146" width="30.5" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sus-gR-XbU">
+                                <rect key="frame" x="84" y="191" width="67" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Username"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avj-5N-uX5">
+                                <rect key="frame" x="266" y="191" width="67" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Username"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSG-42-wwE">
+                                <rect key="frame" x="6" y="552" width="180" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.22888388368885992" green="0.33842579054435096" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Vote">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGg-pL-gfR">
+                                <rect key="frame" x="188" y="552" width="180" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99895685911178589" green="0.0" blue="0.67013174295425415" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Vote">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Yjs-N9-d2X"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="sI9-Rn-jAT" id="Wvf-sP-n2g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAc-VO-tzP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="sI9-Rn-jAT">
+                    <connections>
+                        <outlet property="delegate" destination="8xN-Ui-PCl" id="9mo-Vg-zGG"/>
+                        <outlet property="searchContentsController" destination="8xN-Ui-PCl" id="Yb0-hY-X7i"/>
+                        <outlet property="searchResultsDataSource" destination="8xN-Ui-PCl" id="Gcl-Hf-o5a"/>
+                        <outlet property="searchResultsDelegate" destination="8xN-Ui-PCl" id="IB3-hf-IZz"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="4644" y="3271.2143928035985"/>
+        </scene>
+        <!--Join Battle-->
+        <scene sceneID="MFD-x1-AHj">
+            <objects>
+                <viewController title="Join Battle" id="UcX-s1-kY3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tux-wp-oli"/>
+                        <viewControllerLayoutGuide type="bottom" id="r22-i2-Zht"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jfB-sI-m98">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pbg" translatesAutoresizingMaskIntoConstraints="NO" id="MIn-Lf-ycc">
+                                <rect key="frame" x="16" y="28" width="343" height="475"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pp" translatesAutoresizingMaskIntoConstraints="NO" id="nAi-jd-2zz">
+                                <rect key="frame" x="198" y="511" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Judge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcn-kb-XMZ">
+                                <rect key="frame" x="276" y="511" width="53" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pp" translatesAutoresizingMaskIntoConstraints="NO" id="mbK-hm-1u5">
+                                <rect key="frame" x="16" y="511" width="70" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Host" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BbZ-0P-dWc">
+                                <rect key="frame" x="94" y="511" width="30.5" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxu-Xk-tx2">
+                                <rect key="frame" x="94" y="556" width="67" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Username"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="azy-ix-708">
+                                <rect key="frame" x="276" y="556" width="67" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Username"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ph-5L-Ny3">
+                                <rect key="frame" x="0.0" y="630" width="187" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGi-kr-b5c">
+                                <rect key="frame" x="187" y="630" width="188" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99895685909999998" green="0.0" blue="0.670131743" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Join">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xs4-6T-1sR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5477.6000000000004" y="3271.2143928035985"/>
         </scene>
     </scenes>
     <resources>
@@ -532,10 +808,16 @@
         <image name="gavel" width="40" height="40"/>
         <image name="gavelSelected" width="40" height="40"/>
         <image name="ok" width="40" height="40"/>
+        <image name="pbg" width="200" height="200"/>
+        <image name="plus-circle-outline" width="256" height="256"/>
+        <image name="pp" width="96" height="96"/>
         <image name="profile" width="40" height="40"/>
         <image name="profileSelected" width="40" height="40"/>
         <image name="world" width="40" height="40"/>
         <image name="worldSelected" width="40" height="40"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="1ic-vt-yNv"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
