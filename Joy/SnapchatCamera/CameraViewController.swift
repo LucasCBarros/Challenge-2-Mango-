@@ -12,7 +12,7 @@ import AVFoundation
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var cameraView: UIView!
-    @IBOutlet var pickedImage: UIImageView!
+    @IBOutlet var pickedImageView: UIImageView!
 
     @IBOutlet var DiscardButton: UIButton!
     @IBOutlet var UseButton: UIButton!
@@ -24,6 +24,8 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     var frontCamera: Bool = false
     var didtakePhoto = Bool()
 
+    var photoTaked: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DiscardButton.isHidden = true
@@ -112,7 +114,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         if let videoConnection = stillImageOutput.connection(withMediaType: AVMediaTypeVideo){
             stillImageOutput.captureStillImageAsynchronously(from: videoConnection, completionHandler: { (imageDataSampleBuffer, error) in
                     let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
-                    let image = UIImage(data: imageData!)
+                     self.photoTaked = UIImage(data: imageData!)
 
                     if let photoData = imageData
                     {
@@ -123,9 +125,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                         }
                         FirebaseLib.addPhoto(user: user, photoData: photoData, completionHandler: {_ in })
                     }
-                    print("image taked: \(image)")
-                    self.pickedImage.image = image
-                    self.pickedImage.isHidden = false
+            
+                    self.pickedImageView.image = self.photoTaked
+                    self.pickedImageView.isHidden = false
 
                     self.flashButton.isHidden = true
                     self.cameraButton.isHidden = true
@@ -143,7 +145,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     func captureAnotherPicture(){
         if didtakePhoto == true {
             //self.previewPicture.pickedImage.isHidden = true
-            self.pickedImage.isHidden = true
+            self.pickedImageView.isHidden = true
 
             self.flashButton.isHidden = false
             self.cameraButton.isHidden = false
@@ -171,8 +173,22 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
 
 
-    @IBAction func usePicture(_ sender: Any) {
+    @IBAction func usePicture(_ sender: Any)
+    {
+        self.performSegue(withIdentifier: "CameraToPhotoDestination", sender: self)
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CameraToPhotoDestination"
+        {
+            let nav = segue.destination as? NavigationViewController
+            let ph = nav?.viewControllers.first as? PhotoDestinationViewController
+            if ph != nil
+            {
+                ph?.photo = self.photoTaked!
+            }
+        }
     }
 
 }
