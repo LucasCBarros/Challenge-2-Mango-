@@ -6,6 +6,7 @@
 //  Copyright © 2017 Archetapp. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import FirebaseStorage
 import FirebaseDatabase
@@ -13,12 +14,14 @@ import FirebaseAuth
 
 class FirebaseLib
 {
+    static private var username: String?
     static func editProfilePhoto(user: String, photoData: Data)
     {
         var path = "userPhotos/" + user + "/profilePhoto.jpg"
         self.storePhoto(reference: path, photoData: photoData)
         
     }
+    
     static func getProfilePhoto(user: String, completionHandler: @escaping (UIImage) -> Void)
     {
         let path = "userPhotos/" + user + "/profilePhoto.jpg"
@@ -34,9 +37,36 @@ class FirebaseLib
         }
         
     }
-    static func addPhoto(user: String)
+    static func addPhoto(user: String, photoData: Data, completionHandler: @escaping (String) -> Void)
     {
-        
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+
+        print("esta em addPhoto")
+        let numPhotosPath = "photosNumber"
+        self.getUserValue(path: numPhotosPath)
+        { (numPhotos) in
+            guard let number = numPhotos else
+            {
+                DispatchQueue.main.async
+                {
+                        completionHandler("Error in the photosNumber")
+                }
+                return
+            }
+            
+            DispatchQueue.main.async
+            {
+                let photoPath = "userPhotos/" + user + "/photo" + number
+                self.storePhoto(reference: photoPath, photoData: photoData)
+                // Increment the number of photos
+                let newNumber = Int(number)! + 1
+                let totalNumber = "\(newNumber)"
+                ref.child("usersData/" + user + "/photosNumber").setValue(totalNumber)
+                ref.child("usersData").child(user).child("photos").childByAutoId().setValue(photoPath)
+                print("numero de fotos" + totalNumber)
+            }
+        }
     }
     
     static func storePhoto(reference: String, photoData: Data)
@@ -100,9 +130,48 @@ class FirebaseLib
     
     }
     
+    static func downloadUserPhotos(completionHandler: @escaping ([UIImage]?) -> Void)
+    {
+        var photos: [UIImage]?
+        var ref: DatabaseReference!
+        
+        ref = Database.database().reference()
+        guard let user = self.username else
+        {
+            DispatchQueue.main.async
+            {
+                completionHandler(nil)
+            }
+            return
+        }
+        ref.child("usersData").child(user).child("photos").observeSingleEvent(of: .value, with:
+        { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let photosRef = value?.allValues as? [String]
+            guard var photosPath = photosRef else
+            {
+                print("Nenhuma referencia de foto encontrada")
+                return
+            }
+            photos = [UIImage]()
+            for photoPath in photosPath
+            {
+                
+                self.downloadImage(reference: photoPath, completionHandler:
+                { (photo) in
+                    DispatchQueue.main.async
+                        {
+                            // ARRUMAR ORDENCAO
+                            //print("photoPath: \(photoPath)")
+                            photos?.append(photo)
+                            completionHandler(photos)
+                    }
+                })
+            }
+        })
+    }
     static func getUsernameFromUserID(userID: String, completionHandler: @escaping (String?) -> Void)
     {
-        var username: String?
         var ref: DatabaseReference!
         ref = Database.database().reference()
 
@@ -116,6 +185,26 @@ class FirebaseLib
                         completionHandler(username)
                 }
         })
+    }
+    
+    static func getUserValue(path:String, completionHandler: @escaping (String?) -> Void)
+    {
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        
+        if let user = username
+        {
+            ref.child("usersData").child(user).child(path).observeSingleEvent(of: .value, with:
+                { (snapshot) in
+                    let value = snapshot.value as? String
+                
+                    DispatchQueue.main.async
+                        {
+                            let data = value
+                            completionHandler(data)
+                    }
+            })
+        }
     }
 
     
@@ -135,9 +224,6 @@ class FirebaseLib
             let account = value?["account"] as? String ?? ""
             let name = value?["name"] as? String ?? ""
             let age = value?["age"] as? String ?? ""
-            let collectionPhotosPath = [String]()
-            
-            
             
             userData = UserData(username: user, account: account, name: name, age: age)
             
@@ -194,6 +280,7 @@ class FirebaseLib
                     user.child("account").setValue(account)
                     user.child("name").setValue(name)
                     user.child("age").setValue(age)
+                    user.child("photosNumber").setValue("0")
                 }
                 
                 
@@ -258,5 +345,15 @@ class FirebaseLib
                 }
             }
         }
+    }
+    
+    static func setUsername(username: String)
+    {
+        self.username = username
+    }
+    
+    static func getUsername() -> String?
+    {
+        return self.username
     }
 }

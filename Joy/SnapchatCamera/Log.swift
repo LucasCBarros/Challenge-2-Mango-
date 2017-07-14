@@ -42,6 +42,14 @@ class Log
         {
             if lastUserID != userID
             {
+                FirebaseLib.getUsernameFromUserID(userID: userID, completionHandler:
+                { (username) in
+                    if let user = username
+                    {
+                        FirebaseLib.setUsername(username: user)
+                    }
+                })
+                
                 // carrega dados do novo usuário
                 print("Trocou de usuário")
             }

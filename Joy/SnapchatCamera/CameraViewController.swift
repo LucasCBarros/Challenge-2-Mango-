@@ -114,9 +114,15 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                     let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
                     let image = UIImage(data: imageData!)
 
-
-                   // FirebaseLib.storePhoto(user: <#String#>, photoData: imageData!)
-
+                    if let photoData = imageData
+                    {
+                        guard let user = FirebaseLib.getUsername() else
+                        {
+                            print("User not found")
+                            return
+                        }
+                        FirebaseLib.addPhoto(user: user, photoData: photoData, completionHandler: {_ in })
+                    }
                     print("image taked: \(image)")
                     self.pickedImage.image = image
                     self.pickedImage.isHidden = false

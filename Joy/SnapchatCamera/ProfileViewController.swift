@@ -17,7 +17,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource
     @IBOutlet weak var photoCollection: UICollectionView!
     var username: String?
     
-    var images = [UIImage]() //////
+    var collectionViewPhotos: [UIImage]?
     
 //    var images = [ProfileImages]()
     var customImageFlowLayout: CustomImageFlowLayout!
@@ -26,31 +26,35 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource
         super.viewDidLoad()
         
         self.setProfilePhoto()
-        
-//        if let userID = Log.getUserID()
-//        {
-//            //self.username = FirebaseLib.getUsernameFromUserID(userID: userID, completionHandler: (String) -> Void)
-////            usernameLabel.text = self.username
-//        }
-//        
-//        loadImages()
+        self.collectionViewPhotos = [UIImage]()
+        loadImages()
         customImageFlowLayout = CustomImageFlowLayout()
         photoCollection.collectionViewLayout = customImageFlowLayout
         photoCollection.backgroundColor = .white
+        let data = FirebaseLib.getUserData(user: FirebaseLib.getUsername()!)
     }
     
     func loadImages()
     {
         print("load imagens")
-//        if let user = Log.getUser()
-//        {
-//            print("achou user")
-//            FirebaseLib.getProfilePhoto(user: user)
-//            { (photo) in
-//                self.images.append(photo)
-//            }
+        FirebaseLib.downloadUserPhotos
+        { (userPhotos) in
+            guard let photos = userPhotos else
+            {
+                print("Erro ao carregar as photos. in loadImages")
+                return
+            }
+            self.collectionViewPhotos?.removeAll()
+            for index in 0..<photos.count
+            {
+                self.collectionViewPhotos?.append(photos[index])
+            }
+            
             self.photoCollection.reloadData()
-//        }
+        }
+
+        
+
     }
     func setProfilePhoto()
     {
@@ -88,14 +92,20 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource
     }
 //
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        if collectionViewPhotos == nil
+        {
+            print("none photos")
+            return(0)
+        }
+        
+        return collectionViewPhotos!.count
     }
-//
+
     func collectionView(_ imageCollection: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = imageCollection.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
         
-        let image = images[indexPath.row]
+        let image = collectionViewPhotos?[indexPath.row]
         
         cell.imageView.image = image;
         

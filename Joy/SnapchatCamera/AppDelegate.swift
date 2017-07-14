@@ -27,10 +27,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let loginStoryBoard = UIStoryboard(name: "LoginScreen", bundle: nil)
             firstViewController = loginStoryBoard.instantiateViewController(withIdentifier: "LoginScreenID")
         }
+        // Already is logged in
         else
         {
             let homeStoryBoard = UIStoryboard(name: "Main", bundle: nil)
             firstViewController = homeStoryBoard.instantiateViewController(withIdentifier: "TabBarControllerID")
+            
+            // carregar dados do usuario
+            if let userID = Log.getUserID()
+            {
+                FirebaseLib.getUsernameFromUserID(userID: userID, completionHandler:
+                    {(user) in
+                        if let username = user
+                        {
+                            FirebaseLib.setUsername(username: username)
+                        }
+                })
+            }
         }
         
         self.window?.rootViewController = firstViewController
