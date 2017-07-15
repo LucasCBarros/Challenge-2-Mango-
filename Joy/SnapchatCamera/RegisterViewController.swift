@@ -11,6 +11,10 @@ import UIKit
 class RegisterViewController: LoginViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // profile image
     @IBOutlet weak var avaImg: UIImageView!
     var profilePhotoData: Data?
@@ -18,8 +22,9 @@ class RegisterViewController: LoginViewController, UIImagePickerControllerDelega
     // textfields
     @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
-    @IBOutlet weak var repeatPassword: UITextField!
     @IBOutlet weak var emailTxt: UITextField!
+    @IBOutlet var fullnameTxt: UITextField!
+    @IBOutlet var ageTxt: UITextField!
 
     // buttons
     @IBOutlet weak var signUpBtn: UIButton!
@@ -40,6 +45,8 @@ class RegisterViewController: LoginViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         // scrollview frame size
         scrollView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         scrollView.contentSize.height = self.view.frame.height
@@ -65,25 +72,6 @@ class RegisterViewController: LoginViewController, UIImagePickerControllerDelega
         avaImg.isUserInteractionEnabled = true
         avaImg.addGestureRecognizer(avaTap)
 
-        // alignment
-        avaImg.frame = CGRect(x: self.view.frame.size.width / 2 - 40, y: 80, width: 160, height: 160)
-        usernameTxt.frame = CGRect(x: 10, y: avaImg.frame.origin.y + 160, width: self.view.frame.size.width - 20, height: 30)
-        emailTxt.frame = CGRect(x: 10, y: usernameTxt.frame.origin.y + 40, width: self.view.frame.size.width - 20, height: 30)
-        passwordTxt.frame = CGRect(x: 10, y: emailTxt.frame.origin.y + 40, width: self.view.frame.size.width - 20, height: 30)
-        repeatPassword.frame = CGRect(x: 10, y: passwordTxt.frame.origin.y + 40, width: self.view.frame.size.width - 20, height: 30)
-
-
-        signUpBtn.frame = CGRect(x: 20, y: repeatPassword.frame.origin.y + 60, width: self.view.frame.size.width / 4, height: 30)
-        signUpBtn.layer.cornerRadius = signUpBtn.frame.size.width / 20
-
-        cancelBtn.frame = CGRect(x: self.view.frame.size.width - self.view.frame.size.width / 4 - 20, y: signUpBtn.frame.origin.y, width: self.view.frame.size.width / 4, height: 30)
-        cancelBtn.layer.cornerRadius = cancelBtn.frame.size.width / 20
-
-        // background
-        let bg = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
-        bg.image = UIImage(named: "background.jpg")
-        bg.layer.zPosition = -1
-        self.view.addSubview(bg)
     }
 
 
@@ -149,7 +137,7 @@ class RegisterViewController: LoginViewController, UIImagePickerControllerDelega
         self.view.endEditing(true)
 
         // if fields are empty
-        if (usernameTxt.text!.isEmpty || passwordTxt.text!.isEmpty || repeatPassword.text!.isEmpty || emailTxt.text!.isEmpty) {
+        if (usernameTxt.text!.isEmpty || passwordTxt.text!.isEmpty || ageTxt.text!.isEmpty || emailTxt.text!.isEmpty || fullnameTxt.text!.isEmpty) {
 
             // alert message
             let alert = UIAlertController(title: "PLEASE", message: "fill all fields", preferredStyle: UIAlertControllerStyle.alert)
@@ -160,26 +148,15 @@ class RegisterViewController: LoginViewController, UIImagePickerControllerDelega
             return
         }
 
-        // if different passwords
-        if passwordTxt.text != repeatPassword.text {
-
-            // alert message
-            let alert = UIAlertController(title: "PASSWORDS", message: "do not match", preferredStyle: UIAlertControllerStyle.alert)
-            let ok = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
-            alert.addAction(ok)
-            self.present(alert, animated: true, completion: nil)
-
-            return
-        }
-
-
         // send data to server to related collumns
         let email = self.emailTxt.text!
         let password = self.passwordTxt.text!
         let username = self.usernameTxt.text!
+        let age = self.ageTxt.text!
+        let name = self.fullnameTxt.text!
         
         
-        FirebaseLib.signUp(account: email, password: password, username: username, name: "marcelo", age: "22", profilePhotoData: self.profilePhotoData)
+        FirebaseLib.signUp(account: email, password: password, username: username, name: name, age: age, profilePhotoData: self.profilePhotoData)
         { (error) in
             
             if error == nil

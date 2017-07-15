@@ -11,9 +11,13 @@ import UIKit
 class LoginScreenViewController: LoginViewController
 {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @IBOutlet var logoImg: UIImageView!
     // textfield
-    @IBOutlet weak var usernameTxt: UITextField!
+    @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
     
     // buttons
@@ -25,18 +29,6 @@ class LoginScreenViewController: LoginViewController
     // default func
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        
-//        // alignment
-//        logoImg.frame = CGRect(x: 10, y: 80, width: self.view.frame.size.width - 20, height: 50)
-//        usernameTxt.frame = CGRect(x: 10, y: logoImg.frame.origin.y + 70, width: self.view.frame.size.width - 20, height: 30)
-//        passwordTxt.frame = CGRect(x: 10, y: usernameTxt.frame.origin.y + 40, width: self.view.frame.size.width - 20, height: 30)
-//        signInBtn.frame = CGRect(x: 20, y:  passwordTxt.frame.origin.y + 70, width: self.view.frame.size.width / 4, height: 30)
-//        signInBtn.layer.cornerRadius = signInBtn.frame.size.width / 20
-//        
-//        signUpBtn.frame = CGRect(x: self.view.frame.size.width - self.view.frame.size.width / 4 - 20, y: signInBtn.frame.origin.y, width: self.view.frame.size.width / 4, height: 30)
-//        signUpBtn.layer.cornerRadius = signUpBtn.frame.size.width / 20
         
         // tap to hide keyboard
         let hideTap = UITapGestureRecognizer(target: self, action: #selector(LoginScreenViewController.hideKeyboard(_:)))
@@ -66,7 +58,7 @@ class LoginScreenViewController: LoginViewController
         self.view.endEditing(true)
         
         // if textfields are empty
-        if usernameTxt.text!.isEmpty || passwordTxt.text!.isEmpty {
+        if emailTxt.text!.isEmpty || passwordTxt.text!.isEmpty {
             
             // show alert message
             let alert = UIAlertController(title: "Please", message: "fill in fields", preferredStyle: UIAlertControllerStyle.alert)
@@ -76,7 +68,7 @@ class LoginScreenViewController: LoginViewController
         }
         
         // login functions
-        let email = self.usernameTxt.text!
+        let email = self.emailTxt.text!
         let password = self.passwordTxt.text!
         
         FirebaseLib.signIn(account: email, password: password)
