@@ -37,8 +37,13 @@ class FirebaseLib
         }
         
     }
-    static func addPhoto(user: String, photoData: Data, completionHandler: @escaping (String) -> Void)
+    static func addPhoto(photoData: Data, completionHandler: @escaping (String) -> Void)
     {
+        guard let user = self.username else
+        {
+            print("Username not found in this device!")
+            return
+        }
         var ref: DatabaseReference!
         ref = Database.database().reference()
 
@@ -355,5 +360,24 @@ class FirebaseLib
     static func getUsername() -> String?
     {
         return self.username
+    }
+    
+    static func buildBattle(challenged: String, judge: String, myPhotoPath: String,photoCaption: String)
+    {
+        var ref: DatabaseReference!
+        
+        ref = Database.database().reference()
+        
+        guard let user = FirebaseLib.getUsername() else
+        {
+            print("Username not found!")
+            return
+        }
+        
+        let challenge = ref.child("challenges").childByAutoId()
+        challenge.child("challenger").setValue(user)
+        challenge.child("challenged").setValue(challenged)
+        challenge.child("judge").setValue(judge)
+        challenge.child("challengerPhotoPath").setValue(myPhotoPath)
     }
 }

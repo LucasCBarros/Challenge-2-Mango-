@@ -134,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HnA-P1-G5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4441" y="1506"/>
+            <point key="canvasLocation" x="3174" y="3207"/>
         </scene>
         <!--LoginScreenID-->
         <scene sceneID="gbF-3j-ZzP">
@@ -437,7 +437,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LJI-8m-w83" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7791.1999999999998" y="2220.5397301349326"/>
+            <point key="canvasLocation" x="6852" y="2275"/>
         </scene>
         <!--Photo Destination-->
         <scene sceneID="jCF-TL-gem">
@@ -451,13 +451,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pbg" translatesAutoresizingMaskIntoConstraints="NO" id="gfa-6e-k0V">
-                                <rect key="frame" x="16" y="50" width="343" height="453"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggh-Uh-lrx">
-                                <rect key="frame" x="16" y="527" width="343" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggh-Uh-lrx">
+                                <rect key="frame" x="16" y="523" width="343" height="30"/>
                                 <color key="backgroundColor" red="0.019374470531021259" green="0.36815341769439491" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Post">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -466,9 +461,8 @@
                                     <action selector="postButton:" destination="akW-MO-Rze" eventType="touchUpInside" id="tVR-Nv-pZA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTP-ap-G3V">
-                                <rect key="frame" x="16" y="578" width="343" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTP-ap-G3V">
+                                <rect key="frame" x="16" y="573" width="343" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.67060597182122983" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Battle">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -477,12 +471,36 @@
                                     <action selector="buildBattle:" destination="akW-MO-Rze" eventType="touchUpInside" id="6j6-jS-sJI"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to do with a photo?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhJ-sI-a8x">
+                                <rect key="frame" x="16" y="74" width="343" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="lVY-as-drY">
+                                <rect key="frame" x="16" y="117" width="343" height="386"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZTP-ap-G3V" firstAttribute="leading" secondItem="uYn-b4-JcT" secondAttribute="leadingMargin" id="6r9-xz-DX3"/>
+                            <constraint firstItem="ZTP-ap-G3V" firstAttribute="trailing" secondItem="uYn-b4-JcT" secondAttribute="trailingMargin" id="8Mb-b3-Jlf"/>
+                            <constraint firstItem="RhJ-sI-a8x" firstAttribute="top" secondItem="jZ9-ky-ZZf" secondAttribute="bottom" constant="10" id="DZ6-mW-qfh"/>
+                            <constraint firstItem="ZTP-ap-G3V" firstAttribute="top" secondItem="ggh-Uh-lrx" secondAttribute="bottom" constant="20" id="FUc-fi-YKw"/>
+                            <constraint firstItem="yjt-rq-SLE" firstAttribute="top" secondItem="ZTP-ap-G3V" secondAttribute="bottom" constant="20" id="Ffm-w0-Ep8"/>
+                            <constraint firstItem="RhJ-sI-a8x" firstAttribute="leading" secondItem="uYn-b4-JcT" secondAttribute="leadingMargin" id="GtH-gt-sph"/>
+                            <constraint firstItem="ggh-Uh-lrx" firstAttribute="leading" secondItem="uYn-b4-JcT" secondAttribute="leadingMargin" id="Jbq-Z3-XgQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lVY-as-drY" secondAttribute="trailing" id="aWU-Eb-Vu3"/>
+                            <constraint firstItem="lVY-as-drY" firstAttribute="top" secondItem="RhJ-sI-a8x" secondAttribute="bottom" constant="20" id="hfn-Fm-QNV"/>
+                            <constraint firstItem="ggh-Uh-lrx" firstAttribute="trailing" secondItem="uYn-b4-JcT" secondAttribute="trailingMargin" id="mA7-u2-y4x"/>
+                            <constraint firstItem="lVY-as-drY" firstAttribute="leading" secondItem="uYn-b4-JcT" secondAttribute="leadingMargin" id="q7h-ii-n7U"/>
+                            <constraint firstItem="ggh-Uh-lrx" firstAttribute="top" secondItem="lVY-as-drY" secondAttribute="bottom" constant="20" id="xv4-Vw-cOO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RhJ-sI-a8x" secondAttribute="trailing" id="zDF-NL-clt"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="HvB-u1-exv">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="1MI-C5-f6T">
+                    <navigationItem key="navigationItem" title="Confirmation Screen" id="HvB-u1-exv">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="1MI-C5-f6T">
                             <connections>
                                 <action selector="cancelButton:" destination="akW-MO-Rze" id="Qy7-Nm-Bme"/>
                             </connections>
@@ -490,14 +508,14 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="photoTaked" destination="gfa-6e-k0V" id="XAR-8V-Ky3"/>
+                        <outlet property="photoTaked" destination="lVY-as-drY" id="ffw-tg-16L"/>
                         <segue destination="MWK-Z0-7ZB" kind="presentation" id="UlD-R4-klW"/>
-                        <segue destination="pkW-0J-NfJ" kind="presentation" id="Uks-aN-1Le"/>
+                        <segue destination="fwY-Gt-5pD" kind="show" identifier="PhotoDestinationToProfile" id="YHC-3M-dbc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FaJ-lM-wvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5477.6000000000004" y="2274.5127436281859"/>
+            <point key="canvasLocation" x="3174" y="4847"/>
         </scene>
         <!--HomeViewID-->
         <scene sceneID="PVh-VO-Ijd">
@@ -505,7 +523,7 @@
                 <viewControllerPlaceholder referencedIdentifier="HomeViewID" id="pkW-0J-NfJ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6aq-Z2-jaj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6417" y="2999"/>
+            <point key="canvasLocation" x="3802" y="4846"/>
         </scene>
         <!--Invite to Battle-->
         <scene sceneID="YA0-QD-VUn">
@@ -591,7 +609,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YEw-7Y-7b9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3788" y="3273"/>
+            <point key="canvasLocation" x="3174" y="5616"/>
         </scene>
         <!--Judge Battle-->
         <scene sceneID="CUw-h7-p55">
@@ -681,7 +699,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="4644" y="3271.2143928035985"/>
+            <point key="canvasLocation" x="5607" y="3161"/>
         </scene>
         <!--Join Battle-->
         <scene sceneID="MFD-x1-AHj">
@@ -755,7 +773,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xs4-6T-1sR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5477.6000000000004" y="3271.2143928035985"/>
+            <point key="canvasLocation" x="5225" y="3857"/>
         </scene>
         <!--Battles-->
         <scene sceneID="tCj-5D-Bjt">
@@ -1032,7 +1050,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZEA-Pq-paH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5477.6000000000004" y="2196.2518740629689"/>
+            <point key="canvasLocation" x="5226" y="2204"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="QeC-CD-yLn">
@@ -1050,7 +1068,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdh-4C-ceF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4440.8000000000002" y="2274.5127436281859"/>
+            <point key="canvasLocation" x="3174" y="4048"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="vZW-7w-Agj">
@@ -1184,5 +1202,8 @@
         <image name="world" width="40" height="40"/>
         <image name="worldSelected" width="40" height="40"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="YHC-3M-dbc"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
