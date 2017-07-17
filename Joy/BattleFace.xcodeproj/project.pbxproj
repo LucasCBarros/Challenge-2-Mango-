@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34AE11F1E6995DD1880E335D /* Pods_SnapchatCameraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5887918661A0D60E0A77C4D /* Pods_SnapchatCameraTests.framework */; };
 		52F0EA7D4DAAF6E8A144095B /* Pods_SnapchatCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BAFC7BC5267EC3B3640754 /* Pods_SnapchatCamera.framework */; };
 		9C0371B71F15736900E57048 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0371B61F15736900E57048 /* UserData.swift */; };
 		9C0371B91F164A2E00E57048 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0371B81F164A2E00E57048 /* Log.swift */; };
@@ -86,7 +85,6 @@
 		AC94AD601B8E40BF002D9AD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC94AD6A1B8E40BF002D9AD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		AC94AD701B8E40BF002D9AD2 /* BattleFaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BattleFaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5887918661A0D60E0A77C4D /* Pods_SnapchatCameraTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapchatCameraTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFAD04149ED2DB307172CA51 /* Pods-SnapchatCameraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapchatCameraTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnapchatCameraTests/Pods-SnapchatCameraTests.release.xcconfig"; sourceTree = "<group>"; };
 		E652A2AB1F193DEF00522311 /* JudgeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JudgeTableViewCell.swift; sourceTree = "<group>"; };
 		E652A2AD1F193E5500522311 /* Face1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Face1.jpg; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34AE11F1E6995DD1880E335D /* Pods_SnapchatCameraTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				97BAFC7BC5267EC3B3640754 /* Pods_SnapchatCamera.framework */,
-				B5887918661A0D60E0A77C4D /* Pods_SnapchatCameraTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
