@@ -23,7 +23,15 @@ class TabBarViewController: UITabBarController {
         // color of item
         self.tabBar.tintColor = UIColor(red: 25.0 / 255.0, green: 194.0 / 255.0, blue: 134.0 / 255.0, alpha: 1)
         
-        self.tabBar.backgroundImage = UIImage(named: "TabBar.png")
+//        self.tabBar.backgroundImage = UIImage(named: "TabBar0.png")
+        
+//        if selectedIndex == 0 {self.tabBar.backgroundImage = UIImage(named: "TabBar0.png")}
+//        if selectedIndex == 1 {self.tabBar.backgroundImage = UIImage(named: "TabBar1.png")}
+//        if selectedIndex == 2 {self.tabBar.backgroundImage = UIImage(named: "TabBar2.png")}
+//        if selectedIndex == 3 {self.tabBar.backgroundImage = UIImage(named: "TabBar3.png")}
+//        if selectedIndex == 4 {self.tabBar.backgroundImage = UIImage(named: "TabBar4.png")}
+        
+        //self.tabBar.backgroundImage = UIImage(named: "TabBar.png")
         
         // color of background
 //        self.tabBar.barTintColor = UIColor(red: 25.0 / 255.0, green: 194.0 / 255.0, blue: 134.0 / 255.0, alpha: 1)
