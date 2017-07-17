@@ -16,7 +16,21 @@ class PhotoDestinationViewController: UIViewController
 
     @IBAction func postButton(_ sender: Any)
     {
-        
+        guard photoTaked.image != nil else
+        {
+            print("Photo does not exist!! (nil)")
+            return
+        }
+        guard let photoData = UIImagePNGRepresentation(photoTaked.image!) else
+        {
+            print("Erro in convertion of image")
+            return
+        }
+        FirebaseLib.addPhoto(photoData: photoData, completionHandler: {_ in })
+
+        //self.dismiss(animated: true, completion: nil)
+
+        performSegue(withIdentifier: "PhotoDestinationToProfile", sender: nil)
     }
     @IBAction func cancelButton(_ sender: Any)
     {

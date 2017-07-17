@@ -123,7 +123,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                             print("User not found")
                             return
                         }
-                        FirebaseLib.addPhoto(user: user, photoData: photoData, completionHandler: {_ in })
                     }
             
                     self.pickedImageView.image = self.photoTaked
