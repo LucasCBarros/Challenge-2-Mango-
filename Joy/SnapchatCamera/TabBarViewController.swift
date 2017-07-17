@@ -21,12 +21,9 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         
         // color of item
-        self.tabBar.tintColor = UIColor(red: 25.0 / 255.0, green: 194.0 / 255.0, blue: 134.0 / 255.0, alpha: 1)
+        self.tabBar.tintColor = UIColor.black
         
-        self.tabBar.backgroundImage = UIImage(named: "TabBar.png")
-        
-        // color of background
-//        self.tabBar.barTintColor = UIColor(red: 25.0 / 255.0, green: 194.0 / 255.0, blue: 134.0 / 255.0, alpha: 1)
+        //        self.tabBar.barTintColor = UIColor(red: 25.0 / 255.0, green: 194.0 / 255.0, blue: 134.0 / 255.0, alpha: 1)
         
         // disable translucent
         self.tabBar.isTranslucent = false
