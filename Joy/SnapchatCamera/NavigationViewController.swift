@@ -19,9 +19,11 @@ class NavigationViewController: UINavigationController {
         // color of buttons in nav controller
         self.navigationBar.tintColor = .black
         
+        let backgroundNB = UIImage(named: "naviBar.jpg")
+        self.navigationBar.setBackgroundImage(backgroundNB, for: .default)
+        
         // color of background of nav controller
-        self.navigationBar.barTintColor = UIColor.white
-        //(red: 18.0 / 255.0, green: 86.0 / 255.0, blue: 136.0 / 255.0, alpha: 1)
+//        self.navigationBar.barTintColor = UIColor(red: 25.0 / 255.0, green: 194.0 / 255.0, blue: 134.0 / 255.0, alpha: 1)
         
         // disable translucent
         self.navigationBar.isTranslucent = false

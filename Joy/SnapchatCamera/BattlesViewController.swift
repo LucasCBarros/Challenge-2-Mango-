@@ -23,6 +23,13 @@ class BattlesViewController: UIViewController, UITableViewDataSource, UITableVie
     let names = ["Clamacas", "Marcelo", "Clara", "Lucas", "Afonso", "Shakira", "Tyana"]
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        let background = UIImage(named: "tabBar0")
+        self.tabBarController?.tabBar.backgroundImage = background
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return names.count
@@ -62,10 +69,10 @@ class BattlesViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.hostUsername.text = names[random2]
         cell.judgeUsername.text = names[random3]
         
-        cell.hostPhoto.layer.cornerRadius = cell.hostPhoto.frame.size.width / 2
-        cell.hostPhoto.layer.masksToBounds = true
-        cell.guestPhoto.layer.cornerRadius = cell.guestPhoto.frame.size.width / 2
-        cell.guestPhoto.layer.masksToBounds = true
+//        cell.hostPhoto.layer.cornerRadius = cell.hostPhoto.frame.size.width / 2
+//        cell.hostPhoto.layer.masksToBounds = true
+//        cell.guestPhoto.layer.cornerRadius = cell.guestPhoto.frame.size.width / 2
+//        cell.guestPhoto.layer.masksToBounds = true
         
         
         return cell
