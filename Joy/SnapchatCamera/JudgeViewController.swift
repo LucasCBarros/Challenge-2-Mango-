@@ -14,7 +14,7 @@ class JudgeViewController: UIViewController , UITableViewDataSource, UITableView
     @IBOutlet weak var judgeSegmentControll: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
-    let photos = ["Face1", "Face2", "Face6", "Face4", "Face5", "Face6", "Face3"]
+    let photos = ["Face1", "Face2", "Face3", "Face4", "Face5", "Face6", "Face7"]
     let names = ["Clamacas", "Marcelo", "Clara", "Lucas", "Afonso", "Shakira", "Tyana"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,10 +53,10 @@ class JudgeViewController: UIViewController , UITableViewDataSource, UITableView
     cell.guestWin.isHidden = false
     cell.hostWin.isHidden = true
     
-    cell.hostPhoto.layer.cornerRadius = cell.hostPhoto.frame.size.width / 2
-    cell.hostPhoto.layer.masksToBounds = true
-    cell.guestPhoto.layer.cornerRadius = cell.guestPhoto.frame.size.width / 2
-    cell.guestPhoto.layer.masksToBounds = true
+//    cell.hostPhoto.layer.cornerRadius = cell.hostPhoto.frame.size.width / 2
+//    cell.hostPhoto.layer.masksToBounds = true
+//    cell.guestPhoto.layer.cornerRadius = cell.guestPhoto.frame.size.width / 2
+//    cell.guestPhoto.layer.masksToBounds = true
     
     
     return cell

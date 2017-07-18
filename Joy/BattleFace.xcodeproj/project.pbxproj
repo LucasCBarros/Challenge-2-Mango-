@@ -31,16 +31,10 @@
 		A257120C1F0ECA6E0001376E /* JudgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A257120B1F0ECA6E0001376E /* JudgeViewController.swift */; };
 		A257120E1F0ECA840001376E /* PublicBattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A257120D1F0ECA840001376E /* PublicBattleViewController.swift */; };
 		A25712101F0F1D290001376E /* SegueToCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A257120F1F0F1D290001376E /* SegueToCameraView.swift */; };
+		A2FDAB871F1DAC1700FE17E8 /* headerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FDAB861F1DAC1700FE17E8 /* headerView.swift */; };
 		AC94AD611B8E40BF002D9AD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94AD601B8E40BF002D9AD2 /* AppDelegate.swift */; };
 		AC94AD6B1B8E40BF002D9AD2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC94AD691B8E40BF002D9AD2 /* LaunchScreen.xib */; };
 		E652A2AC1F193DEF00522311 /* JudgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E652A2AB1F193DEF00522311 /* JudgeTableViewCell.swift */; };
-		E652A2B41F193E5500522311 /* Face1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E652A2AD1F193E5500522311 /* Face1.jpg */; };
-		E652A2B51F193E5500522311 /* Face2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E652A2AE1F193E5500522311 /* Face2.jpg */; };
-		E652A2B61F193E5500522311 /* Face3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E652A2AF1F193E5500522311 /* Face3.jpg */; };
-		E652A2B71F193E5500522311 /* Face4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E652A2B01F193E5500522311 /* Face4.jpg */; };
-		E652A2B81F193E5500522311 /* Face5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E652A2B11F193E5500522311 /* Face5.jpg */; };
-		E652A2B91F193E5500522311 /* Face6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E652A2B21F193E5500522311 /* Face6.jpg */; };
-		E652A2BA1F193E5500522311 /* Face7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E652A2B31F193E5500522311 /* Face7.jpg */; };
 		E6DBCE3B1F193A500085E91F /* BattleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DBCE3A1F193A500085E91F /* BattleTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +74,7 @@
 		A257120B1F0ECA6E0001376E /* JudgeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JudgeViewController.swift; sourceTree = "<group>"; };
 		A257120D1F0ECA840001376E /* PublicBattleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicBattleViewController.swift; sourceTree = "<group>"; };
 		A257120F1F0F1D290001376E /* SegueToCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueToCameraView.swift; sourceTree = "<group>"; };
+		A2FDAB861F1DAC1700FE17E8 /* headerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = headerView.swift; sourceTree = "<group>"; };
 		AC94AD5B1B8E40BF002D9AD2 /* BattleFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BattleFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC94AD5F1B8E40BF002D9AD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC94AD601B8E40BF002D9AD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,13 +82,6 @@
 		AC94AD701B8E40BF002D9AD2 /* BattleFaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BattleFaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFAD04149ED2DB307172CA51 /* Pods-SnapchatCameraTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapchatCameraTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnapchatCameraTests/Pods-SnapchatCameraTests.release.xcconfig"; sourceTree = "<group>"; };
 		E652A2AB1F193DEF00522311 /* JudgeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JudgeTableViewCell.swift; sourceTree = "<group>"; };
-		E652A2AD1F193E5500522311 /* Face1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Face1.jpg; sourceTree = "<group>"; };
-		E652A2AE1F193E5500522311 /* Face2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Face2.jpg; sourceTree = "<group>"; };
-		E652A2AF1F193E5500522311 /* Face3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Face3.jpg; sourceTree = "<group>"; };
-		E652A2B01F193E5500522311 /* Face4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Face4.jpg; sourceTree = "<group>"; };
-		E652A2B11F193E5500522311 /* Face5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Face5.jpg; sourceTree = "<group>"; };
-		E652A2B21F193E5500522311 /* Face6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Face6.jpg; sourceTree = "<group>"; };
-		E652A2B31F193E5500522311 /* Face7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Face7.jpg; sourceTree = "<group>"; };
 		E6DBCE3A1F193A500085E91F /* BattleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BattleTableViewCell.swift; sourceTree = "<group>"; };
 		E999D9EA3C71D2FABB11C6A4 /* Pods-SnapchatCamera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapchatCamera.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnapchatCamera/Pods-SnapchatCamera.debug.xcconfig"; sourceTree = "<group>"; };
 		F5C898228B713F4BD5DCAA07 /* Pods-SnapchatCameraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapchatCameraTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnapchatCameraTests/Pods-SnapchatCameraTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +149,7 @@
 				9C3360BC1F19270F006EBDFF /* CameraScreen */,
 				A2F601001F10144F00C55E52 /* Login */,
 				A257120F1F0F1D290001376E /* SegueToCameraView.swift */,
+				A2FDAB861F1DAC1700FE17E8 /* headerView.swift */,
 				A22030B91F154A080071E708 /* ImageCollectionViewCell.swift */,
 				A22030BA1F154A080071E708 /* CustomImageFlowLayout.swift */,
 				A25712071F0ECA3E0001376E /* BattlesViewController.swift */,
@@ -223,13 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				A20F4DF71F1516750037EB24 /* Images.xcassets */,
-				E652A2AD1F193E5500522311 /* Face1.jpg */,
-				E652A2AE1F193E5500522311 /* Face2.jpg */,
-				E652A2AF1F193E5500522311 /* Face3.jpg */,
-				E652A2B01F193E5500522311 /* Face4.jpg */,
-				E652A2B11F193E5500522311 /* Face5.jpg */,
-				E652A2B21F193E5500522311 /* Face6.jpg */,
-				E652A2B31F193E5500522311 /* Face7.jpg */,
 				A20F4DF81F1516750037EB24 /* pp.jpg */,
 				A20F4DF91F1516750037EB24 /* battlelines.ttf */,
 				AC94AD5F1B8E40BF002D9AD2 /* Info.plist */,
@@ -301,7 +283,7 @@
 				TargetAttributes = {
 					AC94AD5A1B8E40BF002D9AD2 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = J5KQYDNX5E;
+						DevelopmentTeam = KYTAYKS6H2;
 						LastSwiftMigration = 0830;
 					};
 					AC94AD6F1B8E40BF002D9AD2 = {
@@ -335,20 +317,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E652A2B41F193E5500522311 /* Face1.jpg in Resources */,
-				E652A2B51F193E5500522311 /* Face2.jpg in Resources */,
 				A20F4DFE1F1517960037EB24 /* Main.storyboard in Resources */,
-				E652A2B71F193E5500522311 /* Face4.jpg in Resources */,
-				E652A2BA1F193E5500522311 /* Face7.jpg in Resources */,
-				E652A2B81F193E5500522311 /* Face5.jpg in Resources */,
 				A20F4DFA1F1516750037EB24 /* Images.xcassets in Resources */,
 				9C5218F21F0C249A00D2D201 /* GoogleService-Info.plist in Resources */,
 				A20F4DFB1F1516750037EB24 /* pp.jpg in Resources */,
-				E652A2B61F193E5500522311 /* Face3.jpg in Resources */,
 				AC94AD6B1B8E40BF002D9AD2 /* LaunchScreen.xib in Resources */,
 				A20F4DF31F1515C00037EB24 /* LoginScreen.storyboard in Resources */,
 				A20F4DFC1F1516750037EB24 /* battlelines.ttf in Resources */,
-				E652A2B91F193E5500522311 /* Face6.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +451,7 @@
 				A25712081F0ECA3E0001376E /* BattlesViewController.swift in Sources */,
 				A22030BC1F154A080071E708 /* ImageCollectionViewCell.swift in Sources */,
 				9C0371B71F15736900E57048 /* UserData.swift in Sources */,
+				A2FDAB871F1DAC1700FE17E8 /* headerView.swift in Sources */,
 				A22030B81F1549760071E708 /* ProfileViewController.swift in Sources */,
 				AC94AD611B8E40BF002D9AD2 /* AppDelegate.swift in Sources */,
 				A20F4DF61F1515C00037EB24 /* LoginViewController.swift in Sources */,
@@ -605,7 +581,7 @@
 			baseConfigurationReference = E999D9EA3C71D2FABB11C6A4 /* Pods-SnapchatCamera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = J5KQYDNX5E;
+				DEVELOPMENT_TEAM = KYTAYKS6H2;
 				INFOPLIST_FILE = SnapchatCamera/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -620,7 +596,7 @@
 			baseConfigurationReference = 4E3AC7818B4C18573DD65E8A /* Pods-SnapchatCamera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = J5KQYDNX5E;
+				DEVELOPMENT_TEAM = KYTAYKS6H2;
 				INFOPLIST_FILE = SnapchatCamera/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

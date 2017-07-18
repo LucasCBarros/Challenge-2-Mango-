@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UICollectionViewDataSource
+class ProfileViewController: UICollectionViewController
 {
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var profilePhotoView: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
+
+
+//    @IBOutlet weak var profilePhotoView: UIImageView!
+//    @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var photoCollection: UICollectionView!
     var username: String?
     
@@ -25,7 +26,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setProfilePhoto()
+//        self.setProfilePhoto()
         self.collectionViewPhotos = [UIImage]()
         loadImages()
         customImageFlowLayout = CustomImageFlowLayout()
@@ -56,28 +57,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource
         
 
     }
-    func setProfilePhoto()
-    {
-        // Configuration of UImageView
-        self.profilePhotoView.layer.cornerRadius = self.profilePhotoView.frame.size.width / 2
-        self.profilePhotoView.layer.masksToBounds = true
-        
-        self.activityIndicator.startAnimating()
-        
-        let userID = Log.getUserID()
-        FirebaseLib.getUsernameFromUserID(userID: userID!, completionHandler:
-            { (username) in
-                
-                if username != nil
-                {
-                    FirebaseLib.getProfilePhoto(user: username!, completionHandler:
-                        { (photo) in
-                            self.profilePhotoView.image = photo
-                            self.activityIndicator.stopAnimating()
-                    })
-                }
-        })
-    }
+
     @IBAction func reloadAction(_ sender: Any) {
         loadImages()
     }
@@ -91,7 +71,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource
 
     }
 //
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionViewPhotos == nil
         {
             print("none photos")
@@ -101,7 +81,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource
         return collectionViewPhotos!.count
     }
 
-    func collectionView(_ imageCollection: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ imageCollection: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = imageCollection.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
         
@@ -111,4 +91,32 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource
         
         return cell
     }
+    
+    // header config
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        // define header
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header", for: indexPath) as! headerView
+        
+        
+        header.activityIndicator.startAnimating()
+        
+            let userID = Log.getUserID()
+            FirebaseLib.getUsernameFromUserID(userID: userID!, completionHandler:
+                    { (username) in
+        
+                        if username != nil
+                        {
+                            FirebaseLib.getProfilePhoto(user: username!, completionHandler:
+                                { (photo) in
+                                    header.avaImg.image = photo
+                                    header.activityIndicator.stopAnimating()
+                            })
+                        }
+                })
+
+
+        return header
+    }
+    
 }
