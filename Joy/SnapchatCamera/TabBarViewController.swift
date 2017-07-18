@@ -40,6 +40,7 @@ class TabBarViewController: UITabBarController {
         
         self.tabBar.unselectedItemTintColor = UIColor.black
         
+        //        self.tabBar.barTintColor = UIColor(red: 25.0 / 255.0, green: 194.0 / 255.0, blue: 134.0 / 255.0, alpha: 1)
 //        self.tabBar.backgroundImage = UIImage(named: "TabBar0.png")
         
 //        if selectedIndex == 0 {self.tabBar.backgroundImage = UIImage(named: "TabBar0.png")}
@@ -58,9 +59,6 @@ class TabBarViewController: UITabBarController {
         // create total icons
         icons.frame = CGRect(x: self.view.frame.size.width / 5 * 3 + 10, y: self.view.frame.size.height - self.tabBar.frame.size.height * 2 - 3, width: 50, height: 35)
         self.view.addSubview(icons)
-        
-
-        
     }
 
     

@@ -134,6 +134,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		9C25F7591F1D57FB00BA2413 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A22030B71F1549760071E708 /* ProfileViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		9C3360BC1F19270F006EBDFF /* CameraScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				9C3360BC1F19270F006EBDFF /* CameraScreen */,
+				9C25F7591F1D57FB00BA2413 /* Profile */,
 				A2F601001F10144F00C55E52 /* Login */,
 				A257120F1F0F1D290001376E /* SegueToCameraView.swift */,
 				A2FDAB861F1DAC1700FE17E8 /* headerView.swift */,
@@ -155,7 +164,6 @@
 				A25712071F0ECA3E0001376E /* BattlesViewController.swift */,
 				E6DBCE3A1F193A500085E91F /* BattleTableViewCell.swift */,
 				A20F4E011F1517DB0037EB24 /* TabBarViewController.swift */,
-				A22030B71F1549760071E708 /* ProfileViewController.swift */,
 				A20F4E021F1517DB0037EB24 /* NavigationViewController.swift */,
 				A257120B1F0ECA6E0001376E /* JudgeViewController.swift */,
 				E652A2AB1F193DEF00522311 /* JudgeTableViewCell.swift */,

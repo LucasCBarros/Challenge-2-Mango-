@@ -14,8 +14,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet var cameraView: UIView!
     @IBOutlet var pickedImageView: UIImageView!
 
-    @IBOutlet var DiscardButton: UIButton!
-    @IBOutlet var UseButton: UIButton!
 
     var captureSession = AVCaptureSession()
     var captureDevice: AVCaptureDevice?
@@ -28,14 +26,17 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DiscardButton.isHidden = true
-        UseButton.isHidden = true
 
         captureSession.sessionPreset = AVCaptureSessionPresetPhoto
         frontCamera(frontCamera)
         if captureDevice != nil { beginSession() }
 
         // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool)
+    {
+        self.navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
     }
 
     func beginSession() {
@@ -132,11 +133,8 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
                     self.cameraButton.isHidden = true
                     self.flashButton.isEnabled = false
                     self.cameraButton.isEnabled = false
-
-                    self.DiscardButton.isHidden = false
-                    self.UseButton.isHidden = false
-                    self.DiscardButton.isEnabled = true
-                    self.UseButton.isEnabled = true
+                
+                    self.performSegue(withIdentifier: "CameraToPhotoDestination", sender: nil)
             })
         }
     }
@@ -151,8 +149,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             self.flashButton.isEnabled = true
             self.cameraButton.isEnabled = true
 
-            self.DiscardButton.isHidden = true
-            self.UseButton.isHidden = true
             didtakePhoto = false}
         else {
             captureSession.startRunning()
@@ -166,17 +162,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         performSegue(withIdentifier: "CancelCaptureSession", sender: AnyObject.self)
     }
 
-
-    @IBAction func DiscardPicture(_ sender: Any) {
-        captureAnotherPicture()
-    }
-
-
-    @IBAction func usePicture(_ sender: Any)
-    {
-        self.performSegue(withIdentifier: "CameraToPhotoDestination", sender: self)
-
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CameraToPhotoDestination"
@@ -187,6 +172,8 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             {
                 ph?.photo = self.photoTaked!
             }
+            self.navigationController?.navigationBar.isHidden = false
+            self.tabBarController?.tabBar.isHidden = false
         }
     }
 
