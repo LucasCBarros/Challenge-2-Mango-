@@ -95,7 +95,7 @@
                         <outlet property="flashButton" destination="1hf-SQ-Rl7" id="pf4-r7-PT1"/>
                         <outlet property="pickedImageView" destination="rF2-bB-CuG" id="Nyy-HG-WCd"/>
                         <segue destination="fwY-Gt-5pD" kind="presentation" identifier="CancelCaptureSession" id="SxD-O4-gaT"/>
-                        <segue destination="akW-MO-Rze" kind="show" identifier="CameraToPhotoDestination" id="H4C-Pz-6lh"/>
+                        <segue destination="Y52-P8-PFT" kind="show" identifier="CameraToPhotoDestination" id="5SP-fK-uqW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HnA-P1-G5u" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -363,6 +363,7 @@
         <!--Photo Destination-->
         <scene sceneID="jCF-TL-gem">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FaJ-lM-wvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Photo Destination" id="akW-MO-Rze" customClass="PhotoDestinationViewController" customModule="BattleFace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jZ9-ky-ZZf"/>
@@ -393,13 +394,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to do with a photo?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhJ-sI-a8x">
-                                <rect key="frame" x="16" y="74" width="343" height="23"/>
+                                <rect key="frame" x="16" y="30" width="343" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="lVY-as-drY">
-                                <rect key="frame" x="16" y="117" width="343" height="430"/>
+                                <rect key="frame" x="16" y="73" width="343" height="474"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -433,9 +434,26 @@
                         <segue destination="MWK-Z0-7ZB" kind="presentation" id="UlD-R4-klW"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FaJ-lM-wvI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3174" y="3718"/>
+            <point key="canvasLocation" x="2326" y="3699"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="j6A-yB-AxY">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="Y52-P8-PFT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wcU-CY-WQ5"/>
+                        <viewControllerLayoutGuide type="bottom" id="qZ4-sz-xLj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jb6-jq-5vq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LQX-yL-2T7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3177" y="3698"/>
         </scene>
         <!--HomeViewID-->
         <scene sceneID="PVh-VO-Ijd">
@@ -1081,7 +1099,7 @@
         <scene sceneID="MOj-bk-XM6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="M2d-tA-QYE" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Camera" selectedImage="Camera" id="Z5s-0d-b4q"/>
+                    <tabBarItem key="tabBarItem" title="Camera" image="Camera" selectedImage="Camera" id="Z5s-0d-b4q"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wmO-TG-gHY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
