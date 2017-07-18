@@ -43,9 +43,6 @@ class TabBarViewController: UITabBarController {
         // create total icons
         icons.frame = CGRect(x: self.view.frame.size.width / 5 * 3 + 10, y: self.view.frame.size.height - self.tabBar.frame.size.height * 2 - 3, width: 50, height: 35)
         self.view.addSubview(icons)
-        
-
-        
     }
 
     

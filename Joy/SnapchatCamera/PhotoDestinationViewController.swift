@@ -45,6 +45,7 @@ class PhotoDestinationViewController: UIViewController
         super.viewDidLoad()
         
         self.photoTaked.image = photo
+        self.tabBarController?.tabBar.isHidden = true
         
         
     }

@@ -13,7 +13,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var profilePhotoView: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
+    //@IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var photoCollection: UICollectionView!
     var username: String?
     
